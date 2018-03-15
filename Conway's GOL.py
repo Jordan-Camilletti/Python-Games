@@ -1,5 +1,6 @@
 #"Conway's GOL".py
 import pygame
+from math import floor
 
 pygame.init()
 white=(255,255,255)
@@ -17,10 +18,13 @@ while(not finish):
 		#print(event)
 		if(event.type == pygame.QUIT):
 			finish=True
-		if(event.type == pygame.MOUSEBUTTONDOWN):
-			pause=False
-		if(event.type == pygame.MOUSEBUTTONUP):
-			pause=True
+		if(event.type == pygame.KEYDOWN):#Space=pause
+			if(event.key == pygame.K_SPACE):
+				pause=not pause
+		if(event.type == pygame.MOUSEBUTTONDOWN):#clicking on square flips it
+			mouseX,mouseY=pygame.mouse.get_pos()
+			print(floor(mouseX/5),floor(mouseY/5))
+			
 
 	yPos=-1
 	for y in grid:
