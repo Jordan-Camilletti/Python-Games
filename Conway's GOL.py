@@ -5,8 +5,8 @@ pygame.init()
 white=(255,255,255)
 black=(0,0,0)
 finish=False
-grid=[[1,0,1],[0,1,0]]
-yPos,xPos=0,0
+grid=[[0]*80 for n in range(60)]#60 arrays that are size 80
+xPos,yPos=0,0
 screen=pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Conway's Game of Life.")
 #clock = pygame.time.Clock()
