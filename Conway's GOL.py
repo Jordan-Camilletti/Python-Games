@@ -23,8 +23,7 @@ while(not finish):
 				pause=not pause
 		if(event.type == pygame.MOUSEBUTTONDOWN):#clicking on square flips it
 			mouseX,mouseY=pygame.mouse.get_pos()
-			print(floor(mouseX/5),floor(mouseY/5))
-			
+			grid[floor(mouseY/5)][floor(mouseX/5)]=1-grid[floor(mouseY/5)][floor(mouseX/5)]
 
 	yPos=-1
 	for y in grid:
