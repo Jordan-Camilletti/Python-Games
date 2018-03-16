@@ -21,7 +21,7 @@ xPos,yPos=0,0
 screen=pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Conway's Game of Life.")
 
-def populate(grid,x,y):
+def populate(grid,x,y):#Determines if a square should be alive or dead based on the 4 rules
 	score=0
 	for ny in range(y-1,y+2):
 		for nx in range(x-1,x+2):
