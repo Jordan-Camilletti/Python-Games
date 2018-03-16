@@ -20,7 +20,7 @@ pygame.display.set_caption("Conway's Game of Life.")
 #clock = pygame.time.Clock()
 
 def populate(grid,x,y):
-	return(0)
+	score=8
 
 
 while(not finish):
