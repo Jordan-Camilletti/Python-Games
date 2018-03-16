@@ -1,8 +1,10 @@
 #"Conway's GOL".py
+
 """For a space that is 'populated':
 Each cell with one or no neighbors dies, as if by solitude.
 Each cell with four or more neighbors dies, as if by overpopulation.
 Each cell with two or three neighbors survives.
+
 For a space that is 'empty' or 'unpopulated'
 Each cell with three neighbors becomes populated."""
 import pygame
@@ -13,7 +15,8 @@ white=(255,255,255)
 black=(0,0,0)
 finish=False
 pause=True
-grid=[[False]*80 for n in range(60)]#60 arrays that are size 80
+gridOld=[[False]*80 for n in range(60)]#60 arrays that are size 80
+gridNew=[[False]*80 for n in range(60)]#gridOld is what's displayed and is what's checked by populated(), gridNew is what gridOld becomes after populated()
 xPos,yPos=0,0
 screen=pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Conway's Game of Life.")
@@ -38,27 +41,36 @@ while(not finish):
 		if(event.type == pygame.KEYDOWN):#Space=pause
 			if(event.key == pygame.K_SPACE):
 				pause=not pause
-		if(event.type == pygame.MOUSEBUTTONDOWN):#clicking on square flips it
+		if(event.type == pygame.MOUSEBUTTONDOWN):#clicking on a square flips it
 			mouseX,mouseY=pygame.mouse.get_pos()
-			grid[floor(mouseY/5)][floor(mouseX/5)]=not grid[floor(mouseY/5)][floor(mouseX/5)]
-			if(grid[floor(mouseY/5)][floor(mouseX/5)]):
+			gridNew[floor(mouseY/5)][floor(mouseX/5)]=not gridOld[floor(mouseY/5)][floor(mouseX/5)]
+			gridOld[floor(mouseY/5)][floor(mouseX/5)]=not gridOld[floor(mouseY/5)][floor(mouseX/5)]
+			if(gridOld[floor(mouseY/5)][floor(mouseX/5)]):
 				pygame.draw.rect(screen,white,[floor(mouseX/5)*5,floor(mouseY/5)*5,5,5])
 			else:
 				pygame.draw.rect(screen,black,[floor(mouseX/5)*5,floor(mouseY/5)*5,5,5])
 
 	if(not pause):
 		yPos=-1
-		for y in grid:
+		for y in gridOld:
 			yPos+=1
 			xPos=-1
 			for x in y:
 				xPos+=1
-				grid[yPos][xPos]=populate(grid,xPos,yPos)
+				gridNew[yPos][xPos]=populate(gridOld,xPos,yPos)
+			
+		yPos=-1	
+		for y in gridNew:
+			yPos+=1
+			xPos=-1
+			for x in y:
+				xPos+=1
+				gridOld[yPos][xPos]=gridNew[yPos][xPos]
 				if(x):
-					pygame.draw.rect(screen,white,[xPos*5,yPos*5,5,5])#x,y,width,height
+					pygame.draw.rect(screen,white,[xPos*5,yPos*5,5,5])
 				else:
 					pygame.draw.rect(screen,black,[xPos*5,yPos*5,5,5])
-		pygame.time.wait(500)
+		pygame.time.wait(250)
 	pygame.display.update()
 	#clock.tick(60)
 pygame.quit()
