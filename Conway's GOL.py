@@ -37,10 +37,10 @@ while(not finish):
 		#print(event)
 		if(event.type == pygame.QUIT):
 			finish=True
-		if(event.type == pygame.KEYDOWN):#Space=pause
+		if(event.type == pygame.KEYDOWN):#Space=pause/unpause
 			if(event.key == pygame.K_SPACE):
 				pause=not pause
-		if(event.type == pygame.MOUSEBUTTONDOWN):#clicking on a square flips it
+		if(event.type == pygame.MOUSEBUTTONDOWN):#clicking on a square 'flips' it
 			mouseX,mouseY=pygame.mouse.get_pos()
 			gridNew[floor(mouseY/5)][floor(mouseX/5)]=not gridOld[floor(mouseY/5)][floor(mouseX/5)]
 			gridOld[floor(mouseY/5)][floor(mouseX/5)]=not gridOld[floor(mouseY/5)][floor(mouseX/5)]
@@ -50,14 +50,14 @@ while(not finish):
 				pygame.draw.rect(screen,black,[floor(mouseX/5)*5,floor(mouseY/5)*5,5,5])
 
 	if(not pause):
-		yPos=-1
+		yPos=-1#Putting the new squares in girdNew based off of gridOld
 		for y in gridOld:
 			yPos+=1
 			xPos=-1
 			for x in y:
 				xPos+=1
 				gridNew[yPos][xPos]=populate(gridOld,xPos,yPos)
-		yPos=-1	
+		yPos=-1#Drawling gridNew into the window and setting gridOld to gridNew
 		for y in gridNew:
 			yPos+=1
 			xPos=-1
