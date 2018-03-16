@@ -20,7 +20,6 @@ gridNew=[[False]*80 for n in range(60)]#gridOld is what's displayed and is what'
 xPos,yPos=0,0
 screen=pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Conway's Game of Life.")
-#clock = pygame.time.Clock()
 
 def populate(grid,x,y):
 	score=0
@@ -58,7 +57,6 @@ while(not finish):
 			for x in y:
 				xPos+=1
 				gridNew[yPos][xPos]=populate(gridOld,xPos,yPos)
-			
 		yPos=-1	
 		for y in gridNew:
 			yPos+=1
@@ -72,6 +70,5 @@ while(not finish):
 					pygame.draw.rect(screen,black,[xPos*5,yPos*5,5,5])
 		pygame.time.wait(250)
 	pygame.display.update()
-	#clock.tick(60)
 pygame.quit()
 quit()
