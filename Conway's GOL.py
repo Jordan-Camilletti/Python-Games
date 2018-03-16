@@ -20,7 +20,16 @@ pygame.display.set_caption("Conway's Game of Life.")
 #clock = pygame.time.Clock()
 
 def populate(grid,x,y):
-	score=8
+	score=9
+	for ny in range(y-1,y+1):
+		for nx in range(x-1,x+1):
+			if(ny<0 or nx<0):
+				score-=1
+			elif(ny>=60 or nx>=80):
+				score-=1
+			elif(grid[ny][nx]):
+				score-=1
+	return((grid and score>=2 and score<=3) or (score==3 and not grid[y][x]))
 
 
 while(not finish):
