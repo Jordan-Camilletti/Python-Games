@@ -11,7 +11,10 @@ finish=False
 dosh=0
 years=0
 name=""
+font=pygame.font.SysFont('Arial', 30)
+text=font.render(name,False,black)
 screen=pygame.display.set_mode((400,300))
+screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING")
 
 while(not finish):
