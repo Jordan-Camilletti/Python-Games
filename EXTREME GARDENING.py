@@ -23,5 +23,6 @@ while(not finish):
 			finish=True
 
 	pygame.display.update()
+	
 pygame.quit()
 quit()
