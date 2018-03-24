@@ -12,8 +12,9 @@ dosh=0
 years=0
 stage=0#0=seed,1=grow,2=upgrade
 name=""
-font=pygame.font.SysFont('Arial', 30)
-text=font.render(name,False,black)
+
+font=pygame.font.SysFont('Arial', 15)
+#text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
@@ -30,8 +31,11 @@ while(not finish):
 		pygame.draw.rect(screen,black,[0,0,400,2])
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
+		screen.blit(font.render("Bro's Rose",False,black),(66,66))
+
 	elif(screen==1):
 		pygame.draw.rect(screen,white,[0,0,1,1])
+
 	else:
 		pygame.draw.rect(screen,white,[0,0,1,1])
 	pygame.display.update()
