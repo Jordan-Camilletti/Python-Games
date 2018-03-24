@@ -23,7 +23,6 @@ while(not finish):
 		if(event.type == pygame.QUIT):
 			finish=True
 
-	print(stage)
 	if(stage==0):
 		pygame.draw.rect(screen,black,[50,10,5,5])
 	elif(screen==1):
