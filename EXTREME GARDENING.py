@@ -24,7 +24,12 @@ while(not finish):
 			finish=True
 
 	if(stage==0):
-		pygame.draw.rect(screen,black,[50,10,5,5])
+		pygame.draw.rect(screen,black,[0,0,2,300])
+		for n in range(1,4):
+			pygame.draw.rect(screen,black,[(n*133)-1,0,2,300])
+		pygame.draw.rect(screen,black,[0,0,400,2])
+		for n in range(1,4):
+			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
 	elif(screen==1):
 		pygame.draw.rect(screen,white,[0,0,1,1])
 	else:
