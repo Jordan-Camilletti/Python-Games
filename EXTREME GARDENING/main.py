@@ -17,7 +17,7 @@ stage=0#0=seed,1=grow,2=upgrade
 font=pygame.font.SysFont('Arial', 10)
 names=["Bro's Rose",
 		"Protien Petunia",
-		"No Homoe Hibiscus",
+		"No Homo Hibiscus",
 		"Tulip of Testosterone",
 		"Beast Mode Blue Bonnet",
 		"Dude's Daffodil",
@@ -42,7 +42,7 @@ while(not finish):
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
-			screen.blit(font.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font.render(names[name],False,black).get_width()/2) , ((1+(floor(name/3))*50)+(floor(name/3)*50)+80)))
+			screen.blit(font.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+80))
 
 	elif(screen==1):
 		pygame.draw.rect(screen,white,[0,0,1,1])
