@@ -10,6 +10,7 @@ Each cell with three neighbors becomes populated."""
 import pygame
 from math import floor
 
+print("Click on a square to populate/depopulate it.\nUse space to pasue/unpause.")
 pygame.init()
 white=(255,255,255)
 black=(0,0,0)
