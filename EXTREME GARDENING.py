@@ -13,7 +13,7 @@ dosh=0
 years=0
 stage=0#0=seed,1=grow,2=upgrade
 
-font=pygame.font.SysFont('Arial', 15)
+font=pygame.font.SysFont('Arial', 10)
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homoe Hibiscus",
