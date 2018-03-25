@@ -3,6 +3,7 @@
 """
 """
 import pygame
+from math import floor
 
 pygame.init()
 white=(255,255,255)
@@ -11,9 +12,17 @@ finish=False
 dosh=0
 years=0
 stage=0#0=seed,1=grow,2=upgrade
-name=""
 
 font=pygame.font.SysFont('Arial', 15)
+names=["Bro's Rose",
+		"Protien Petunia",
+		"No Homoe Hibiscus",
+		"Tulip of Testosterone",
+		"Beast Mode Blue Bonnet",
+		"Dude's Daffodil",
+		"Whey Waterlily",
+		"Lifting Lavender",
+		"'Sup Buttercup"]
 #text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
@@ -31,7 +40,8 @@ while(not finish):
 		pygame.draw.rect(screen,black,[0,0,400,2])
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
-		screen.blit(font.render("Bro's Rose",False,black),(66,66))
+		for name in range(len(names)):
+			screen.blit(font.render(names[name],False,black) , (((1+floor(name/3))*66)+(floor(name/3)*66) , ((1+((name)%3))*50)+((name%3)*50)+28))
 
 	elif(screen==1):
 		pygame.draw.rect(screen,white,[0,0,1,1])
