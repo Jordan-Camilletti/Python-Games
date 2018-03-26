@@ -2,7 +2,6 @@
 
 """
 """
-
 import pygame
 from math import floor
 
