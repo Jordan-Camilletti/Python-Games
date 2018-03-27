@@ -1,7 +1,8 @@
 #"EXTREME GARDENING".py
 
 """
-"""import pygame
+"""
+import pygame
 from math import floor
 
 print("")
