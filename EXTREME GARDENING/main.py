@@ -5,7 +5,6 @@
 import pygame
 from math import floor
 
-
 print("")
 pygame.init()
 white=(255,255,255)
