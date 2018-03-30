@@ -24,7 +24,7 @@ names=["Bro's Rose",
 		"Whey Waterlily",
 		"Lifting Lavender",
 		"'Sup Buttercup"]
-photos=[]
+photos=['Seeds/bonnet1.jpg',]
 #text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
