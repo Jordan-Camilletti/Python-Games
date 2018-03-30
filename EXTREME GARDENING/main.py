@@ -25,15 +25,15 @@ names=["Bro's Rose",
 		"Lifting Lavender",
 		"'Sup Buttercup"]
 photos=['Seeds/bonnet1.jpg',
-		'butercup1.jpg',
-		'daffodil1.jpg',
-		'hib1.jpg',
-		'lavender1.jpg',
-		'petunia1.jpg'
-		'rose.jpg'
-		'sunflower1.jpg',
-		'tulip1.jpg',
-		'waterlily.jpg']
+		'Seeds/buttercup1.jpg',
+		'Seeds/daffodil1.jpg',
+		'Seeds/hib1.png',
+		'Seeds/lavender1.jpg',
+		'Seeds/petunia1.jpg',
+		'Seeds/rose1.jpg',
+		'Seeds/sunflower1.jpg',
+		'Seeds/tulip1.jpg',
+		'Seeds/waterlily1.png']
 #text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
