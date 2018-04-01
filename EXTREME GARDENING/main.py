@@ -24,7 +24,7 @@ names=["Bro's Rose",
 		"Whey Waterlily",
 		"Lifting Lavender",
 		"'Sup Buttercup"]
-photos=['Seeds/bonnet1.jpg',
+seedPhotos=['Seeds/bonnet1.jpg',
 		'Seeds/buttercup1.jpg',
 		'Seeds/daffodil1.jpg',
 		'Seeds/hib1.png',
