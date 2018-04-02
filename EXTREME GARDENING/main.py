@@ -52,9 +52,9 @@ while(not finish):
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
-			screen.blit(font.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+80))
-			img=pygame.image.load('test.png')
-			screen.blit(img, (((1+(name%3))*66)+((name%3)*66) , (floor(name/3)*100)+80))
+			screen.blit(font.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+85))
+			img=pygame.image.load(seedPhotos[name])
+			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
 	elif(screen==1):
 		pygame.draw.rect(screen,white,[0,0,1,1])
