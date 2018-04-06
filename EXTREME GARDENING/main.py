@@ -23,7 +23,7 @@ names=["Bro's Rose",
 		"Dude's Daffodil",
 		"Whey Waterlily",
 		"Lifting Lavender",
-		"'Sup Buttercup"]
+		"'Sup Butetrcup"]
 seedPhotos=['Seeds/bonnet1.jpg',
 		'Seeds/buttercup1.jpg',
 		'Seeds/daffodil1.jpg',
@@ -43,6 +43,12 @@ while(not finish):
 	for event in pygame.event.get():
 		if(event.type == pygame.QUIT):
 			finish=True
+		if(event.type == pygame.MOUSEBUTTONDOWN):
+			if(stage==0):
+
+			elif(stage==1):
+
+			else:
 
 	if(stage==0):
 		pygame.draw.rect(screen,black,[0,0,2,300])
