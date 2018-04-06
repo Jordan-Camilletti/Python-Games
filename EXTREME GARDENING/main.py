@@ -44,6 +44,7 @@ while(not finish):
 		if(event.type == pygame.QUIT):
 			finish=True
 		if(event.type == pygame.MOUSEBUTTONDOWN):
+			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
 
 			elif(stage==1):
