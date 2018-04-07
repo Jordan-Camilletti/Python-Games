@@ -78,7 +78,8 @@ while(not finish):
 	elif(stage==1):
 		screen.fill(white)
 		img=pygame.image.load(plantPhotos[flowerNum])
-		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))		
+		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
+		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))	
 	else:
 		pygame.draw.rect(screen,white,[0,0,1,1])
 	pygame.display.update()
