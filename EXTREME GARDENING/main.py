@@ -12,6 +12,7 @@ black=(0,0,0)
 finish=False
 dosh=0
 years=0
+flowerNum=0
 stage=0#0=seed,1=grow,2=upgrade
 
 font=pygame.font.SysFont('Arial', 10)
@@ -34,6 +35,15 @@ seedPhotos=['Seeds/bonnet1.jpg',
 		'Seeds/sunflower1.jpg',
 		'Seeds/tulip1.jpg',
 		'Seeds/waterlily1.png']
+plantPhotos=['',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'']
 #text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
@@ -46,7 +56,9 @@ while(not finish):
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
-				print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), ceil(mouseX/(400/3))-3+(ceil(mouseY/(300/3))*3))
+				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
+				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
+				stage+=1
 			elif(stage==1):
 				print(mouseX)
 			else:
@@ -64,9 +76,9 @@ while(not finish):
 			img=pygame.image.load(seedPhotos[name])
 			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
-	elif(screen==1):
+	elif(stage==1):
 		pygame.draw.rect(screen,white,[0,0,1,1])
-
+		
 	else:
 		pygame.draw.rect(screen,white,[0,0,1,1])
 	pygame.display.update()
