@@ -3,7 +3,7 @@
 """
 """
 import pygame
-from math import floor
+from math import floor, ceil
 
 print("")
 pygame.init()
@@ -46,7 +46,7 @@ while(not finish):
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
-				print(mouseX/(400/3), mouseY/(300/3))
+				print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)))
 			elif(stage==1):
 				print(mouseX)
 			else:
