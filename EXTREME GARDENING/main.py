@@ -59,7 +59,7 @@ while(not finish):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
 				print(mouseX)
-			if(stage==1):
+			elif(stage==1):
 				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
 				stage=2
@@ -72,6 +72,10 @@ while(not finish):
 	if(stage==0):
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))
 		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
+		screen.blit(font2.render("Start",False,black), (178.5, 150))
+		screen.blit(font2.render("Help",False,black), (180.5,195))
+		screen.blit(font2.render("Credits",False,black), (168.5,240))
+		print(font2.render("Credits",False,black).get_width()/2)
 
 	elif(stage==1):
 		pygame.draw.rect(screen,black,[0,0,2,300])
