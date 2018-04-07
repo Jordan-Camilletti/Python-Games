@@ -34,15 +34,15 @@ seedPhotos=['Seeds/rose1.jpg',
 		'Seeds/waterlily1.png',
 		'Seeds/lavender1.jpg',
 		'Seeds/buttercup1.jpg']
-plantPhotos=['',
-			'',
-			'',
-			'',
-			'',
-			'',
-			'',
-			'',
-			'']
+plantPhotos=['Plants/rose2.jpg',
+			'Plants/petunia2.jpg',
+			'Plants/hib2.jpg',
+			'Plants/tulip2.jpg',
+			'Plants/bonnet2.jpg',
+			'Plants/daffodil2.jpg',
+			'Plants/waterlily2.jpg',
+			'Plants/lavender2.jpg',
+			'Plants/buttercup2.jpg']
 #text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
@@ -57,7 +57,7 @@ while(not finish):
 			if(stage==0):
 				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
-				stage+=1
+				stage=1
 			elif(stage==1):
 				print(mouseX)
 			else:
@@ -76,8 +76,9 @@ while(not finish):
 			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
 	elif(stage==1):
-		pygame.draw.rect(screen,white,[0,0,1,1])
-		
+		screen.fill(white)
+		img=pygame.image.load(plantPhotos[flowerNum])
+		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))		
 	else:
 		pygame.draw.rect(screen,white,[0,0,1,1])
 	pygame.display.update()
