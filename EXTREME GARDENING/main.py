@@ -46,7 +46,7 @@ while(not finish):
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
-				print(mouseX)
+				print(mouseX/(400/3), mouseY/(300/3))
 			elif(stage==1):
 				print(mouseX)
 			else:
