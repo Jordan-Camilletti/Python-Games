@@ -9,13 +9,16 @@ print("")
 pygame.init()
 white=(255,255,255)
 black=(0,0,0)
+red=(255,0,0)
 finish=False
 dosh=0
 years=0
 flowerNum=0
-stage=0#0=seed,1=grow,2=upgrade
+stage=0#0=menu,1==seed,2=grow,3=upgrade
 
-font=pygame.font.SysFont('Arial', 10)
+sFont=pygame.font.SysFont('Impact',45)#starting font
+font1=pygame.font.SysFont('Arial', 10)
+font2=pygame.font.SysFont('Arial', 20)
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
@@ -55,15 +58,22 @@ while(not finish):
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
+				print(mouseX)
+			if(stage==1):
 				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
-				stage=1
-			elif(stage==1):
+				stage=2
+			elif(stage==2):
 				print(mouseX)
 			else:
 				print(mouseX)
 
+
 	if(stage==0):
+		screen.blit(sFont.render("EXTREME!",False,red), (116,25))
+		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
+
+	elif(stage==1):
 		pygame.draw.rect(screen,black,[0,0,2,300])
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[(n*133)-1,0,2,300])
@@ -71,15 +81,16 @@ while(not finish):
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
-			screen.blit(font.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+85))
+			screen.blit(font1.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font1.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+85))
 			img=pygame.image.load(seedPhotos[name])
 			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
-	elif(stage==1):
+	elif(stage==2):
 		screen.fill(white)
 		img=pygame.image.load(plantPhotos[flowerNum])
 		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
-		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))	
+		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
+		screen.blit(font2.render("Shop",False,black), (20,15))	
 	else:
 		pygame.draw.rect(screen,white,[0,0,1,1])
 	pygame.display.update()
