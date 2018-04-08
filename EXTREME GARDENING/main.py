@@ -76,6 +76,8 @@ while(not finish):
 		screen.blit(font2.render("Help",False,black), (180.5,195))
 		screen.blit(font2.render("Credits",False,black), (168.5,240))
 		pygame.draw.rect(screen,black,(160,150,80,25),3)
+		pygame.draw.rect(screen,black,(160,195,80,25),3)
+		pygame.draw.rect(screen,black,(160,240,80,25),3)		
 		#print(font2.render("",False,black).get_width()/2)
 
 	elif(stage==1):
