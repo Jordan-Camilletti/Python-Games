@@ -12,3 +12,6 @@ finish=False
 pause=False
 screen=pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Sierpinski's Carpet")
+
+while(not finish):
+  
