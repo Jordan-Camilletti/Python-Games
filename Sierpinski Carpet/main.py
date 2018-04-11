@@ -15,3 +15,5 @@ pygame.display.set_caption("Sierpinski's Carpet")
 
 while(not finish):
   
+pygame.quit()
+quit()
