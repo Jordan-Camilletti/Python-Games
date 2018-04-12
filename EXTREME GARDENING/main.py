@@ -14,7 +14,7 @@ finish=False
 dosh=0
 years=0
 flowerNum=0
-stage=0#0=menu,1==seed,2=grow,3=upgrade
+stage=0#-2=credits,-1=help,0=menu,1==seed,2=grow,3=upgrade
 
 sFont=pygame.font.SysFont('Impact',45)#starting font
 font1=pygame.font.SysFont('Arial', 10)
@@ -58,7 +58,12 @@ while(not finish):
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage==0):
-				print(mouseX)
+				if(mouseX>=160 and mouseX<=240 and mouseY>=150 and mouseY<=175):
+					stage=1
+				elif(mouseX>=160 and mouseX<=240 and mouseY>=195 and mouseY<=220):
+					stage=-1
+				elif(mouseX>=160 and mouseX<=240 and mouseY>=240 and mouseY<=265):
+					stage=-2
 			elif(stage==1):
 				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
@@ -68,8 +73,12 @@ while(not finish):
 			else:
 				print(mouseX)
 
-
-	if(stage==0):
+	screen.fill(white)
+	if(stage==-2):
+		screen.blit(sFont.render("Credits:",False,black), (0,0))
+	elif(stage==-1):
+		screen.blit(sFont.render("Help:",False,black), (0,0))
+	elif(stage==0):
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))#\n isn't allowed, so I need to do this
 		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
 		screen.blit(font2.render("Start",False,black), (178.5, 150))
