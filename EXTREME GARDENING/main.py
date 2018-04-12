@@ -76,8 +76,10 @@ while(not finish):
 	screen.fill(white)
 	if(stage==-2):
 		screen.blit(font2.render("Credits:",False,black), (0,0))
+
 	elif(stage==-1):
 		screen.blit(font2.render("Help:",False,black), (0,0))
+		
 	elif(stage==0):
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))#\n isn't allowed, so I need to do this
 		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
