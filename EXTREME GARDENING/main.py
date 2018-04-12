@@ -108,7 +108,7 @@ while(not finish):
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
 		screen.blit(font2.render("Shop",False,black), (20,15))	
 	else:
-		pygame.draw.rect(screen,white,[0,0,1,1])
+		screen.fill(white)
 	pygame.display.update()
 	
 pygame.quit()
