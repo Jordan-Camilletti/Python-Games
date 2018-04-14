@@ -17,6 +17,7 @@ flowerNum=0
 stage=0#-2=credits,-1=help,0=menu,1==seed,2=grow,3=upgrade
 
 sFont=pygame.font.SysFont('Impact',45)#starting font
+cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
 names=["Bro's Rose",
@@ -75,8 +76,13 @@ while(not finish):
 
 	screen.fill(white)
 	if(stage==-2):
-		screen.blit(font2.render("Credits:",False,black), (0,0))
-		screen.blit(font2.render("",False,black), (0,20))
+		screen.blit(sFont.render("Credits",False,black), (133,0))
+		screen.blit(font2.render("Programmed by:",False,black), (126.5,25))
+		screen.blit(font2.render("Jordan Camilletti",False,black), (127,45))
+		screen.blit(font2.render("Sponsored by:",False,black), (136,50))
+		screen.blit(font2.render("The Democratic United Data Electors(DUDE)",False,black), (3,80))
+		screen.blit(font2.render("Paid for by:",False,black), (149,75))
+		screen.blit(font2.render("The Bureaucratic Recitative Offices(BRO)",False,black), (16.5,100))
 
 	elif(stage==-1):
 		screen.blit(font2.render("Help:",False,black), (0,0))
@@ -103,7 +109,7 @@ while(not finish):
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
 			screen.blit(font1.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font1.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+85))
 			img=pygame.image.load(seedPhotos[name])
-			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
+			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(nme/3)*100)+5))
 
 	elif(stage==2):
 		screen.fill(white)
