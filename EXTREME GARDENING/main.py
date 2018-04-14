@@ -59,9 +59,9 @@ while(not finish):
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
 			if(stage<0):
-				if(mouseX>=15 and mouseX<=95 and mouseY>=18 and mouseY<=43):
+				if(mouseX>=18 and mouseX<=78 and mouseY>=18 and mouseY<=41):
 					stage=0
-			if(stage==0):
+			elif(stage==0):
 				if(mouseX>=160 and mouseX<=240 and mouseY>=150 and mouseY<=175):
 					stage=1
 				elif(mouseX>=160 and mouseX<=240 and mouseY>=195 and mouseY<=220):
@@ -78,8 +78,8 @@ while(not finish):
 				print(mouseX)
 
 	screen.fill(white)
-	if(stage==-2):
-		pygame.draw.rect(screen,black,(15,18,80,25),3)
+	if(stage==-2):#Credits
+		pygame.draw.rect(screen,black,(18,18,60,23),3)
 		screen.blit(font2.render("Back",False,black), (26,18))
 		screen.blit(sFont.render("Credits",False,black), (133,0))
 		screen.blit(font2.render("Programmed by:",False,black), (126.5,55))
@@ -89,13 +89,13 @@ while(not finish):
 		screen.blit(font2.render("Paid for by:",False,black), (149,195))
 		screen.blit(font2.render("The Bureaucratic Recitative Offices(BRO)",False,black), (16.5,220))
 
-	elif(stage==-1):
-		pygame.draw.rect(screen,black,(15,18,80,25),3)
+	elif(stage==-1):#Help
+		pygame.draw.rect(screen,black,(18,18,60,23),3)
 		screen.blit(font2.render("Back",False,black), (26,18))
 		screen.blit(sFont.render("Help:",False,black), (158.5,0))
 		screen.blit(font2.render("",False,black), (0,20))
 
-	elif(stage==0):
+	elif(stage==0):#starting
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))#\n isn't allowed, so I need to do this
 		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
 		screen.blit(font2.render("Start",False,black), (178.5, 150))
@@ -106,7 +106,7 @@ while(not finish):
 		pygame.draw.rect(screen,black,(160,240,80,25),3)		
 		#print(font2.render("",False,black).get_width()/2)
 
-	elif(stage==1):
+	elif(stage==1):#Flower Select
 		pygame.draw.rect(screen,black,[0,0,2,300])
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[(n*133)-1,0,2,300])
@@ -118,8 +118,9 @@ while(not finish):
 			img=pygame.image.load(seedPhotos[name])
 			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
-	elif(stage==2):
+	elif(stage==2):#Main
 		screen.fill(white)
+		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		img=pygame.image.load(plantPhotos[flowerNum])
 		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
