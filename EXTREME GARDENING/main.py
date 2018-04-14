@@ -12,7 +12,7 @@ black=(0,0,0)
 red=(255,0,0)
 finish=False
 dosh=0
-years=0
+inc=1
 flowerNum=0
 stage=0#-2=credits,-1=help,0=menu,1==seed,2=grow,3=upgrade
 
@@ -61,6 +61,7 @@ while(not finish):
 			if(stage<0):
 				if(mouseX>=18 and mouseX<=78 and mouseY>=18 and mouseY<=41):
 					stage=0
+
 			elif(stage==0):
 				if(mouseX>=160 and mouseX<=240 and mouseY>=150 and mouseY<=175):
 					stage=1
@@ -68,15 +69,22 @@ while(not finish):
 					stage=-1
 				elif(mouseX>=160 and mouseX<=240 and mouseY>=240 and mouseY<=265):
 					stage=-2
+
 			elif(stage==1):
 				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
 				stage=2
+
 			elif(stage==2):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=3
 				elif(mouseX>=15 and mouseX<=73 and mouseY>=45 and mouseY<=70):
+					dosh=0
+					inc=1
 					stage=0
+				else:
+					dosh+=inc
+
 			else:
 				print(mouseX)
 
@@ -126,6 +134,7 @@ while(not finish):
 		screen.blit(font2.render("Shop",False,black), (20,15))	
 		pygame.draw.rect(screen,black,(15,45,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,46))	
+		screen.blit(font2.render("¥{0}".format(dosh),False,black),(320,15))
 		img=pygame.image.load(plantPhotos[flowerNum])
 		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
