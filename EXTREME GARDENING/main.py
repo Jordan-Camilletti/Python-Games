@@ -58,6 +58,9 @@ while(not finish):
 			finish=True
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
+			if(stage<0):
+				if(mouseX>=15 and mouseX<=95 and mouseY>=18 and mouseY<=43):
+					stage=0
 			if(stage==0):
 				if(mouseX>=160 and mouseX<=240 and mouseY>=150 and mouseY<=175):
 					stage=1
@@ -76,6 +79,8 @@ while(not finish):
 
 	screen.fill(white)
 	if(stage==-2):
+		pygame.draw.rect(screen,black,(15,18,80,25),3)
+		screen.blit(font2.render("Back",False,black), (26,18))
 		screen.blit(sFont.render("Credits",False,black), (133,0))
 		screen.blit(font2.render("Programmed by:",False,black), (126.5,55))
 		screen.blit(font2.render("Jordan Camilletti",False,black), (127,80))
@@ -85,7 +90,8 @@ while(not finish):
 		screen.blit(font2.render("The Bureaucratic Recitative Offices(BRO)",False,black), (16.5,220))
 
 	elif(stage==-1):
-		print(sFont.render("Help",False,black).get_width()/2)
+		pygame.draw.rect(screen,black,(15,18,80,25),3)
+		screen.blit(font2.render("Back",False,black), (26,18))
 		screen.blit(sFont.render("Help:",False,black), (158.5,0))
 		screen.blit(font2.render("",False,black), (0,20))
 
