@@ -85,7 +85,8 @@ while(not finish):
 		screen.blit(font2.render("The Bureaucratic Recitative Offices(BRO)",False,black), (16.5,220))
 
 	elif(stage==-1):
-		screen.blit(font2.render("Help:",False,black), (0,0))
+		print(sFont.render("Help",False,black).get_width()/2)
+		screen.blit(sFont.render("Help:",False,black), (158.5,0))
 		screen.blit(font2.render("",False,black), (0,20))
 
 	elif(stage==0):
@@ -109,7 +110,7 @@ while(not finish):
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
 			screen.blit(font1.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font1.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+85))
 			img=pygame.image.load(seedPhotos[name])
-			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(nme/3)*100)+5))
+			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
 	elif(stage==2):
 		screen.fill(white)
