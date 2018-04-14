@@ -77,12 +77,12 @@ while(not finish):
 	screen.fill(white)
 	if(stage==-2):
 		screen.blit(sFont.render("Credits",False,black), (133,0))
-		screen.blit(font2.render("Programmed by:",False,black), (126.5,25))
-		screen.blit(font2.render("Jordan Camilletti",False,black), (127,45))
-		screen.blit(font2.render("Sponsored by:",False,black), (136,50))
-		screen.blit(font2.render("The Democratic United Data Electors(DUDE)",False,black), (3,80))
-		screen.blit(font2.render("Paid for by:",False,black), (149,75))
-		screen.blit(font2.render("The Bureaucratic Recitative Offices(BRO)",False,black), (16.5,100))
+		screen.blit(font2.render("Programmed by:",False,black), (126.5,55))
+		screen.blit(font2.render("Jordan Camilletti",False,black), (127,80))
+		screen.blit(font2.render("Sponsored by:",False,black), (136,125))
+		screen.blit(font2.render("The Democratic United Data Electors(DUDE)",False,black), (3,150))
+		screen.blit(font2.render("Paid for by:",False,black), (149,195))
+		screen.blit(font2.render("The Bureaucratic Recitative Offices(BRO)",False,black), (16.5,220))
 
 	elif(stage==-1):
 		screen.blit(font2.render("Help:",False,black), (0,0))
