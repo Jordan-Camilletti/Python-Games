@@ -73,7 +73,10 @@ while(not finish):
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
 				stage=2
 			elif(stage==2):
-				print(mouseX)
+				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
+					stage=3
+				elif(mouseX>=15 and mouseX<=73 and mouseY>=45 and mouseY<=70):
+					stage=0
 			else:
 				print(mouseX)
 
@@ -119,12 +122,15 @@ while(not finish):
 			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
 
 	elif(stage==2):#Main
-		screen.fill(white)
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
+		screen.blit(font2.render("Shop",False,black), (20,15))	
+		pygame.draw.rect(screen,black,(15,45,58,25),3)
+		screen.blit(font2.render("Back",False,black), (20,46))	
 		img=pygame.image.load(plantPhotos[flowerNum])
 		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
-		screen.blit(font2.render("Shop",False,black), (20,15))	
+		
+
 	else:
 		screen.fill(white)
 	pygame.display.update()
