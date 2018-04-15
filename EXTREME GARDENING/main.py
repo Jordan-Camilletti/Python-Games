@@ -77,16 +77,17 @@ while(not finish):
 
 			elif(stage==2):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
-					stage=3
-				elif(mouseX>=15 and mouseX<=73 and mouseY>=45 and mouseY<=70):
 					dosh=0
 					inc=1
 					stage=0
+				elif(mouseX>=15 and mouseX<=73 and mouseY>=45 and mouseY<=70):
+					stage=3
 				else:
 					dosh+=inc
 
-			else:
-				print(mouseX)
+			elif(stage==3):
+				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
+					stage=2
 
 	screen.fill(white)
 	if(stage==-2):#Credits
@@ -131,17 +132,19 @@ while(not finish):
 
 	elif(stage==2):#Main
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
-		screen.blit(font2.render("Shop",False,black), (20,15))	
+		screen.blit(font2.render("Back",False,black), (20,15))	
 		pygame.draw.rect(screen,black,(15,45,58,25),3)
-		screen.blit(font2.render("Back",False,black), (20,46))	
+		screen.blit(font2.render("Shop",False,black), (20,46))	
 		screen.blit(font2.render("¥{0}".format(dosh),False,black),(320,15))
 		img=pygame.image.load(plantPhotos[flowerNum])
 		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
 		
 
-	else:
-		screen.fill(white)
+	elif(stage==3):
+		pygame.draw.rect(screen,black,(15,14,58,25),3)
+		screen.blit(font2.render("Back",False,black), (20,15))	
+
 	pygame.display.update()
 	
 pygame.quit()
