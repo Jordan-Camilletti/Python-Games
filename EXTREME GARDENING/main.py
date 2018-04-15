@@ -188,11 +188,11 @@ while(not finish):
 		screen.blit(font1.render("X",False,black), (280,285))
 		screen.blit(font1.render("X",False,black), (360,285))
 
-		pygame.draw.rect(screen,black,(80,0,1,300),2)
+		"""pygame.draw.rect(screen,black,(80,0,1,300),2)
 		pygame.draw.rect(screen,black,(160,0,1,300),2)
 		pygame.draw.rect(screen,black,(240,0,1,300),2)
 		pygame.draw.rect(screen,black,(320,0,1,300),2)
-		pygame.draw.rect(screen,black,(400,0,1,300),2)
+		pygame.draw.rect(screen,black,(400,0,1,300),2)"""
 
 	pygame.display.update()
 	
