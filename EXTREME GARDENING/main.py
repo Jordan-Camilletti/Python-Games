@@ -173,6 +173,15 @@ while(not finish):
 	elif(stage==3):
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
+		screen.blit(font1.render("Dosh:",False,black), (15,50))
+		screen.blit(font1.render("¥{0}".format(dosh),False,black), (15,65))
+		screen.blit(font1.render("Dosh",False,black), (15,95))
+		screen.blit(font1.render("Increase:",False,black), (15,105))
+		screen.blit(font1.render("x{0}".format(mInc),False,black), (15,120))
+		screen.blit(font1.render("Testosterone",False,black), (15,150))
+		screen.blit(font1.render("Increase:",False,black), (15,160))
+		screen.blit(font1.render("x{0}".format(tInc),False,black), (15,175))
+
 		screen.blit(font1.render("Supa' Soil",False,black), (120-24.5,85))
 		screen.blit(font1.render("Words of",False,black), (200-20.5,75))
 		screen.blit(font1.render("Encouragement",False,black), (200-38,85))
