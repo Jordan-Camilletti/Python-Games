@@ -134,9 +134,8 @@ while(not finish):
 		screen.blit(font2.render("Start",False,black), (178.5, 150))
 		screen.blit(font2.render("Help",False,black), (180.5,195))
 		screen.blit(font2.render("Credits",False,black), (168.5,240))
-		pygame.draw.rect(screen,black,(160,150,80,25),3)
-		pygame.draw.rect(screen,black,(160,195,80,25),3)
-		pygame.draw.rect(screen,black,(160,240,80,25),3)		
+		for n in range(3):
+			pygame.draw.rect(screen,black,(160,150+(n*45),80,25),3)
 		#print(font2.render("",False,black).get_width()/2)
 
 	elif(stage==1):#Flower Select
@@ -146,6 +145,7 @@ while(not finish):
 		pygame.draw.rect(screen,black,[0,0,400,2])
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
+			
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
 			screen.blit(font1.render(names[name],False,black) , (gridDisplay(name,1)-(font1.render(names[name],False,black).get_width()/2) , gridDisplay(name,0)+85))
 			img=pygame.image.load(seedPhotos[name])
@@ -158,10 +158,12 @@ while(not finish):
 		screen.blit(font2.render("Exit",False,black), (20,15))	
 		pygame.draw.rect(screen,black,(15,45,58,25),3)
 		screen.blit(font2.render("Shop",False,black), (20,46))	
+
 		screen.blit(font1.render("Dosh:",False,black),(320,15))
 		screen.blit(font1.render("¥{0}".format(dosh),False,black),(320,25))
 		screen.blit(font1.render("Testosterone:",False,black),(320,45))
 		screen.blit(font1.render("{0} ng/dl".format(tes),False,black),(320,55))
+
 		img=pygame.image.load(plantPhotos[flowerNum])
 		currImg=pygame.transform.scale(img, (findSize(img.get_width(),tes), findSize(img.get_height(),tes)))
 		screen.blit(currImg, (200-(currImg.get_width()/2),300-currImg.get_height()))	
@@ -188,11 +190,8 @@ while(not finish):
 		screen.blit(font1.render("X",False,black), (280,285))
 		screen.blit(font1.render("X",False,black), (360,285))
 
-		pygame.draw.rect(screen,black,(80,0,1,300),2)
-		pygame.draw.rect(screen,black,(160,0,1,300),2)
-		pygame.draw.rect(screen,black,(240,0,1,300),2)
-		pygame.draw.rect(screen,black,(320,0,1,300),2)
-		pygame.draw.rect(screen,black,(400,0,1,300),2)
+		for n in range(1,5):
+			pygame.draw.rect(screen,black,(n*80,0,1,300),2)
 
 	pygame.display.update()
 	
