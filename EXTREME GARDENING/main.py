@@ -22,7 +22,8 @@ black=(0,0,0)
 red=(255,0,0)
 finish=False
 dosh=0
-inc=1
+mInc=1#Money increase
+tInc=1#Testosterone increase
 tes=0#Testosterone leves
 flowerNum=0
 stage=0#-2=credits,-1=help,0=menu,1==seed,2=grow,3=upgrade
@@ -31,6 +32,7 @@ sFont=pygame.font.SysFont('Impact',45)#starting font
 cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
+prices=[]
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
@@ -89,14 +91,15 @@ while(not finish):
 			elif(stage==2):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					dosh=0
-					inc=1
+					mInc=1
+					tInc=1
 					tes=0
 					stage=0
 				elif(mouseX>=15 and mouseX<=73 and mouseY>=45 and mouseY<=70):
 					stage=3
 				else:
-					dosh+=inc
-					tes+=1
+					dosh+=mInc
+					tes+=tInc
 
 			elif(stage==3):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
@@ -152,7 +155,7 @@ while(not finish):
 
 	elif(stage==2):#Main
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
-		screen.blit(font2.render("Back",False,black), (20,15))	
+		screen.blit(font2.render("Exit",False,black), (20,15))	
 		pygame.draw.rect(screen,black,(15,45,58,25),3)
 		screen.blit(font2.render("Shop",False,black), (20,46))	
 		screen.blit(font1.render("Dosh:",False,black),(320,15))
@@ -168,7 +171,28 @@ while(not finish):
 	elif(stage==3):
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
-		#TODO: Fill out the shop
+		screen.blit(font1.render("Supa' Soil",False,black), (120-24.5,85))
+		screen.blit(font1.render("Words of",False,black), (200-20.5,85))
+		screen.blit(font1.render("Encouragement",False,black), (200-38,95))
+		screen.blit(font1.render("Capitalism",False,black), (280-25,85))
+		screen.blit(font1.render("X",False,black), (360,85))
+
+		screen.blit(font1.render("Protien Powder",False,black), (120-36,185))
+		screen.blit(font1.render("Get a Real Job",False,black), (200-35.5,185))
+		screen.blit(font1.render("Really Cool",False,black), (280-27.5,185))
+		screen.blit(font1.render("Gloves",False,black), (280-16,195))
+		screen.blit(font1.render("X",False,black), (360,185))
+
+		screen.blit(font1.render("X",False,black), (120,285))
+		screen.blit(font1.render("X",False,black), (200,285))
+		screen.blit(font1.render("X",False,black), (280,285))
+		screen.blit(font1.render("X",False,black), (360,285))
+
+		pygame.draw.rect(screen,black,(80,0,1,300),2)
+		pygame.draw.rect(screen,black,(160,0,1,300),2)
+		pygame.draw.rect(screen,black,(240,0,1,300),2)
+		pygame.draw.rect(screen,black,(320,0,1,300),2)
+		pygame.draw.rect(screen,black,(400,0,1,300),2)
 
 	pygame.display.update()
 	
