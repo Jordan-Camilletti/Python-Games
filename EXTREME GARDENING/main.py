@@ -168,6 +168,7 @@ while(not finish):
 	elif(stage==3):
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
+		#TODO: Fill out the shop
 
 	pygame.display.update()
 	
