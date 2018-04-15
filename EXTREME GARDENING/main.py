@@ -5,6 +5,16 @@
 import pygame
 from math import floor, ceil
 
+def findSize(size, tes):
+	tPercent=(tes/500.0)
+	nSize=floor(size*tPercent)
+	return(nSize)
+
+def gridDisplay(name, b):
+	if(b):
+		return(((1+(name%3))*66)+((name%3)*66))
+	return(floor(name/3)*100)
+
 print("")
 pygame.init()
 white=(255,255,255)
@@ -13,6 +23,7 @@ red=(255,0,0)
 finish=False
 dosh=0
 inc=1
+tes=0#Testosterone leves
 flowerNum=0
 stage=0#-2=credits,-1=help,0=menu,1==seed,2=grow,3=upgrade
 
@@ -79,11 +90,13 @@ while(not finish):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					dosh=0
 					inc=1
+					tes=0
 					stage=0
 				elif(mouseX>=15 and mouseX<=73 and mouseY>=45 and mouseY<=70):
 					stage=3
 				else:
 					dosh+=inc
+					tes+=1
 
 			elif(stage==3):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
@@ -105,7 +118,12 @@ while(not finish):
 		pygame.draw.rect(screen,black,(18,18,60,23),3)
 		screen.blit(font2.render("Back",False,black), (26,18))
 		screen.blit(sFont.render("Help:",False,black), (158.5,0))
-		screen.blit(font2.render("",False,black), (0,20))
+		screen.blit(font2.render("CLICK ON THE SCREEN",False,black), (88.5,80))
+		screen.blit(font2.render("GET TESTOSTERONE",False,black), (96.5,110))
+		screen.blit(font2.render("GET THOSE GAINS",False,black), (109.5,140))
+		screen.blit(font2.render("RESPECT YOUR ELDERS",False,black), (80.5,170))
+		screen.blit(font2.render("ALWAYS USE YOUR TURN SIGNALS",False,black), (37.5,200))
+		screen.blit(font2.render("DONATE TO CHARITY",False,black), (97,230))
 
 	elif(stage==0):#starting
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))#\n isn't allowed, so I need to do this
@@ -126,18 +144,24 @@ while(not finish):
 		for n in range(1,4):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
-			screen.blit(font1.render(names[name],False,black) , (((1+(name%3))*66)+((name%3)*66)-(font1.render(names[name],False,black).get_width()/2) , (floor(name/3)*100)+85))
+			screen.blit(font1.render(names[name],False,black) , (gridDisplay(name,1)-(font1.render(names[name],False,black).get_width()/2) , gridDisplay(name,0)+85))
 			img=pygame.image.load(seedPhotos[name])
-			screen.blit(img, (((1+(name%3))*66)+((name%3)*66)-40 , (floor(name/3)*100)+5))
+			screen.blit(img, (gridDisplay(name,1)-40 , gridDisplay(name,0)+5))
+			#((1+(name%3))*66)+((name%3)*66)
+			#(floor(name/3)*100)
 
 	elif(stage==2):#Main
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
 		pygame.draw.rect(screen,black,(15,45,58,25),3)
 		screen.blit(font2.render("Shop",False,black), (20,46))	
-		screen.blit(font2.render("¥{0}".format(dosh),False,black),(320,15))
+		screen.blit(font1.render("Dosh:",False,black),(320,15))
+		screen.blit(font1.render("¥{0}".format(dosh),False,black),(320,25))
+		screen.blit(font1.render("Testosterone:",False,black),(320,45))
+		screen.blit(font1.render("{0} ng/dl".format(tes),False,black),(320,55))
 		img=pygame.image.load(plantPhotos[flowerNum])
-		screen.blit(img, (200-(img.get_width()/2),300-img.get_height()))	
+		currImg=pygame.transform.scale(img, (findSize(img.get_width(),tes), findSize(img.get_height(),tes)))
+		screen.blit(currImg, (200-(currImg.get_width()/2),300-currImg.get_height()))	
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
 		
 
