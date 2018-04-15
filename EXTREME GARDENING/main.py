@@ -172,15 +172,15 @@ while(not finish):
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
 		screen.blit(font1.render("Supa' Soil",False,black), (120-24.5,85))
-		screen.blit(font1.render("Words of",False,black), (200-20.5,85))
-		screen.blit(font1.render("Encouragement",False,black), (200-38,95))
+		screen.blit(font1.render("Words of",False,black), (200-20.5,75))
+		screen.blit(font1.render("Encouragement",False,black), (200-38,85))
 		screen.blit(font1.render("Capitalism",False,black), (280-25,85))
 		screen.blit(font1.render("X",False,black), (360,85))
 
 		screen.blit(font1.render("Protien Powder",False,black), (120-36,185))
 		screen.blit(font1.render("Get a Real Job",False,black), (200-35.5,185))
-		screen.blit(font1.render("Really Cool",False,black), (280-27.5,185))
-		screen.blit(font1.render("Gloves",False,black), (280-16,195))
+		screen.blit(font1.render("Really Cool",False,black), (280-27.5,175))
+		screen.blit(font1.render("Gloves",False,black), (280-16,185))
 		screen.blit(font1.render("X",False,black), (360,185))
 
 		screen.blit(font1.render("X",False,black), (120,285))
@@ -188,11 +188,11 @@ while(not finish):
 		screen.blit(font1.render("X",False,black), (280,285))
 		screen.blit(font1.render("X",False,black), (360,285))
 
-		"""pygame.draw.rect(screen,black,(80,0,1,300),2)
+		pygame.draw.rect(screen,black,(80,0,1,300),2)
 		pygame.draw.rect(screen,black,(160,0,1,300),2)
 		pygame.draw.rect(screen,black,(240,0,1,300),2)
 		pygame.draw.rect(screen,black,(320,0,1,300),2)
-		pygame.draw.rect(screen,black,(400,0,1,300),2)"""
+		pygame.draw.rect(screen,black,(400,0,1,300),2)
 
 	pygame.display.update()
 	
