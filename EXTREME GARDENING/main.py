@@ -170,7 +170,7 @@ while(not finish):
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
 		
 
-	elif(stage==3):
+	elif(stage==3):#Shop 
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
 		screen.blit(font1.render("Dosh:",False,black), (15,50))
