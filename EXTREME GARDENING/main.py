@@ -128,7 +128,7 @@ while(not finish):
 		screen.blit(font2.render("ALWAYS USE YOUR TURN SIGNALS",False,black), (37.5,200))
 		screen.blit(font2.render("DONATE TO CHARITY",False,black), (97,230))
 
-	elif(stage==0):#starting
+	elif(stage==0):#Starting
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))#\n isn't allowed, so I need to do this
 		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
 		screen.blit(font2.render("Start",False,black), (178.5, 150))
