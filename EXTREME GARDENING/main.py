@@ -5,12 +5,12 @@
 import pygame
 from math import floor, ceil
 
-def findSize(size, tes):
+def findSize(size, tes):#Gets the size of the flower based on clicks
 	tPercent=(tes/500.0)
 	nSize=floor(size*tPercent)
 	return(nSize)
 
-def gridDisplay(name, b):
+def gridDisplay(name, b):#Used to display names from arrays on a grid
 	if(b):
 		return(((1+(name%3))*66)+((name%3)*66))
 	return(floor(name/3)*100)
