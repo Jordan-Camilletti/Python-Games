@@ -192,7 +192,7 @@ while(not finish):
 		screen.blit(font1.render("Get a Real Job",False,black), (200-35.5,185))
 		screen.blit(font1.render("Really Cool",False,black), (280-27.5,175))
 		screen.blit(font1.render("Gloves",False,black), (280-16,185))
-		screen.blit(font1.render("X",False,black), (360,185))
+		screen.blit(font1.render("Gym Membership",False,black), (360,185))
 
 		screen.blit(font1.render("X",False,black), (120,285))
 		screen.blit(font1.render("X",False,black), (200,285))
