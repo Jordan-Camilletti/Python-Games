@@ -10,7 +10,7 @@ def findSize(size, tes):#Gets the size of the flower based on clicks
 	nSize=floor(size*tPercent)
 	return(nSize)
 
-def gridDisplay(name, b):#Used to display names from arrays on a grid
+def gridDisplay(name, b):#Used to display names from arrays onto a grid
 	if(b):
 		return(((1+(name%3))*66)+((name%3)*66))
 	return(floor(name/3)*100)
