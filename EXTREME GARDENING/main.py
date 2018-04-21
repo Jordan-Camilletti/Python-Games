@@ -196,7 +196,7 @@ while(not finish):
 
 		screen.blit(font1.render("UV Lights",False,black), (120,285))
 		screen.blit(font1.render("Extra Mitochondria",False,black), (200,285))
-		screen.blit(font1.render("X",False,black), (280,285))
+		screen.blit(font1.render("Wrestling Movies",False,black), (280,285))
 		screen.blit(font1.render("X",False,black), (360,285))
 
 		for n in range(1,5):
