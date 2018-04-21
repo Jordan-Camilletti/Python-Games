@@ -195,7 +195,7 @@ while(not finish):
 		screen.blit(font1.render("Gym Membership",False,black), (360,185))
 
 		screen.blit(font1.render("UV Lights",False,black), (120,285))
-		screen.blit(font1.render("X",False,black), (200,285))
+		screen.blit(font1.render("Extra Mitochondria",False,black), (200,285))
 		screen.blit(font1.render("X",False,black), (280,285))
 		screen.blit(font1.render("X",False,black), (360,285))
 
