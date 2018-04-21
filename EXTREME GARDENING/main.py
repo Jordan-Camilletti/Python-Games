@@ -197,7 +197,7 @@ while(not finish):
 		screen.blit(font1.render("UV Lights",False,black), (120,285))
 		screen.blit(font1.render("Extra Mitochondria",False,black), (200,285))
 		screen.blit(font1.render("Wrestling Movies",False,black), (280,285))
-		screen.blit(font1.render("SLIM JIMS",False,black), (360,285))
+		screen.blit(font1.render("SLIM JIMS™",False,black), (360,285))
 
 		for n in range(1,5):
 			pygame.draw.rect(screen,black,(n*80,0,1,300),2)
