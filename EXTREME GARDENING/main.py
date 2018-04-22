@@ -190,11 +190,7 @@ while(not finish):
 		screen.blit(font1.render("Words of",False,black), (200-20.5,75))
 		screen.blit(font1.render("Encouragement",False,black), (200-38,85))
 		screen.blit(font1.render("Capitalism",False,black), (280-25,85))
-<<<<<<< HEAD
-		screen.blit(font1.render("Flower Power",False,black), (360,85))
-=======
 		screen.blit(font1.render("Flower Power",False,black), (360-31.5,85))
->>>>>>> d4c8ca4c0b5c16e717b34d2bcca89e0e4d1b936d
 
 		screen.blit(font1.render("Protien Powder",False,black), (120-36,185))
 		screen.blit(font1.render("Get a Real Job",False,black), (200-35.5,185))
