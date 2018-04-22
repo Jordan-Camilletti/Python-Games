@@ -60,18 +60,18 @@ plantPhotos=['Plants/rose2.jpg',
 			'Plants/waterlily2.jpg',
 			'Plants/lavender2.jpg',
 			'Plants/buttercup2.jpg']
-shopPhotos=['soil.jpg',
-			'words.png',
-			'capital.png',
-			'flower.jpg',
-			'powder.jpg',
-			'job.jpg',
-			'gloves.jpg',
-			'gym.jpg',
-			'UV.jpg',
-			'mitochondria.png',
-			'movie.jpg',
-			'slim.jpg']
+shopPhotos=['Upgrades/soil.jpg',
+			'Upgrades/words.png',
+			'Upgrades/capital.png',
+			'Upgrades/flower.jpg',
+			'Upgrades/powder.jpg',
+			'Upgrades/job.jpg',
+			'Upgrades/gloves.jpg',
+			'Upgrades/gym.jpg',
+			'Upgrades/UV.jpg',
+			'Upgrades/mitochondria.png',
+			'Upgrades/movie.jpg',
+			'Upgrades/slim.jpg']
 #text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
