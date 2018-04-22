@@ -221,19 +221,6 @@ while(not finish):
 			pygame.draw.rect(screen,black,(80,n*100,400,1),2)
 		pygame.draw.rect(screen,black,(80,298,400,1),2)
 
-		"""img=pygame.image.load('test.png')
-		screen.blit(img, (82,2))
-		screen.blit(img, (162,2))
-		screen.blit(img, (242,2))
-		screen.blit(img, (322,2))
-		screen.blit(img, (82,102))
-		screen.blit(img, (162,102))
-		screen.blit(img, (242,102))
-		screen.blit(img, (322,102))
-		screen.blit(img, (82,202))
-		screen.blit(img, (162,202))
-		screen.blit(img, (242,202))
-		screen.blit(img, (322,202))"""
 		for name in range(len(shopPhotos)):
 			img=pygame.image.load(shopPhotos[name])
 			screen.blit(img, (2+(80*(1+(name%4))) , 2+(100*floor(name/4))))
