@@ -66,10 +66,6 @@ screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
 
 while(not finish):
-
-	print(font1.render("Flower Power",False,black).get_width()/2)
-
-
 	for event in pygame.event.get():
 		if(event.type == pygame.QUIT):
 			finish=True
@@ -95,7 +91,7 @@ while(not finish):
 			elif(stage==2):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					dosh=0
-					Inc=1
+					mInc=1
 					tInc=1
 					tes=0
 					stage=0
