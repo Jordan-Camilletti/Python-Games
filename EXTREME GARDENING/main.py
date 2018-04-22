@@ -1,16 +1,16 @@
 #"EXTREME GARDENING".py
+"""
+"""
 
-"""
-"""
 import pygame
 from math import floor, ceil
 
-def findSize(size, tes):
+def findSize(size, tes):#Gets the size of the flower based on clicks
 	tPercent=(tes/500.0)
 	nSize=floor(size*tPercent)
 	return(nSize)
 
-def gridDisplay(name, b):
+def gridDisplay(name, b):#Used to display names from arrays onto a grid
 	if(b):
 		return(((1+(name%3))*66)+((name%3)*66))
 	return(floor(name/3)*100)
@@ -132,7 +132,7 @@ while(not finish):
 		screen.blit(font2.render("ALWAYS USE YOUR TURN SIGNALS",False,black), (37.5,200))
 		screen.blit(font2.render("DONATE TO CHARITY",False,black), (97,230))
 
-	elif(stage==0):#starting
+	elif(stage==0):#Starting
 		screen.blit(sFont.render("EXTREME!",False,red), (116,25))#\n isn't allowed, so I need to do this
 		screen.blit(sFont.render("GARDENING!",False,red), (93.5, 65))
 		screen.blit(font2.render("Start",False,black), (178.5, 150))
@@ -174,7 +174,7 @@ while(not finish):
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
 		
 
-	elif(stage==3):
+	elif(stage==3):#Shop 
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Back",False,black), (20,15))	
 		screen.blit(font1.render("Dosh:",False,black), (15,50))
@@ -190,18 +190,22 @@ while(not finish):
 		screen.blit(font1.render("Words of",False,black), (200-20.5,75))
 		screen.blit(font1.render("Encouragement",False,black), (200-38,85))
 		screen.blit(font1.render("Capitalism",False,black), (280-25,85))
+<<<<<<< HEAD
 		screen.blit(font1.render("Flower Power",False,black), (360,85))
+=======
+		screen.blit(font1.render("Flower Power",False,black), (360-31.5,85))
+>>>>>>> d4c8ca4c0b5c16e717b34d2bcca89e0e4d1b936d
 
 		screen.blit(font1.render("Protien Powder",False,black), (120-36,185))
 		screen.blit(font1.render("Get a Real Job",False,black), (200-35.5,185))
 		screen.blit(font1.render("Really Cool",False,black), (280-27.5,175))
 		screen.blit(font1.render("Gloves",False,black), (280-16,185))
-		screen.blit(font1.render("X",False,black), (360,185))
+		screen.blit(font1.render("Gym Membership",False,black), (360,185))
 
-		screen.blit(font1.render("X",False,black), (120,285))
-		screen.blit(font1.render("X",False,black), (200,285))
-		screen.blit(font1.render("X",False,black), (280,285))
-		screen.blit(font1.render("X",False,black), (360,285))
+		screen.blit(font1.render("UV Lights",False,black), (120,285))
+		screen.blit(font1.render("Extra Mitochondria",False,black), (200,285))
+		screen.blit(font1.render("Wrestling Movies",False,black), (280,285))
+		screen.blit(font1.render("SLIM JIMS™",False,black), (360,285))
 
 		for n in range(1,5):
 			pygame.draw.rect(screen,black,(n*80,0,1,300),2)
