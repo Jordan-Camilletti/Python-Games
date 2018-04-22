@@ -192,12 +192,15 @@ while(not finish):
 		screen.blit(font1.render("Get a Real Job",False,black), (200-35.5,185))
 		screen.blit(font1.render("Really Cool",False,black), (280-27.5,175))
 		screen.blit(font1.render("Gloves",False,black), (280-16,185))
-		screen.blit(font1.render("Gym Membership",False,black), (360,185))
+		screen.blit(font1.render("Gym",False,black), (360-11,175))
+		screen.blit(font1.render("Membership",False,black), (360-29,185))
 
-		screen.blit(font1.render("UV Lights",False,black), (120,285))
-		screen.blit(font1.render("Extra Mitochondria",False,black), (200,285))
-		screen.blit(font1.render("Wrestling Movies",False,black), (280,285))
-		screen.blit(font1.render("SLIM JIMS™",False,black), (360,285))
+		screen.blit(font1.render("UV Lights",False,black), (120-22.5,285))
+		screen.blit(font1.render("Extra",False,black), (200-12,275))
+		screen.blit(font1.render("Mitochondria",False,black), (200-31.5,285))
+		screen.blit(font1.render("Wrestling",False,black), (280-21.5,275))
+		screen.blit(font1.render("Movies",False,black), (280-16.5,285))
+		screen.blit(font1.render("SLIM JIMS™",False,black), (360-31,285))
 
 		for n in range(1,5):
 			pygame.draw.rect(screen,black,(n*80,0,1,300),2)
