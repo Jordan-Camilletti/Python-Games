@@ -246,6 +246,5 @@ while(not finish):
 			screen.blit(img, (2+(80*(1+(name%4))) , 2+(100*floor(name/4))))
 
 	pygame.display.update()
-	
 pygame.quit()
 quit()
