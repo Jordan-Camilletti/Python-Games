@@ -7,7 +7,7 @@ from math import floor, ceil
 
 def shopPrint(x,y,prices):
 	price=prices[(floor(mouseX/80)-1)+(4*floor(mouseY/100))]
-	screen.blit(font1.render(price,False,black), (0,0))
+	screen.blit(font1.render(price,False,black), (320,80))
 	#TODO: fill this out
 
 def findSize(size, tes):#Gets the size of the flower based on clicks
