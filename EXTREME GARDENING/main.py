@@ -5,6 +5,10 @@
 import pygame
 from math import floor, ceil
 
+def shopPrint(x,y,prices):
+	price=prices[(floor(mouseX/80)-1)+(4*floor(mouseY/100))]
+	screen.blit(font1.render(price,False,black), (0,0))
+
 def findSize(size, tes):#Gets the size of the flower based on clicks
 	tPercent=(tes/500.0)
 	nSize=floor(size*tPercent)
@@ -32,7 +36,18 @@ sFont=pygame.font.SysFont('Impact',45)#starting font
 cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
-prices=[]
+prices=['1',
+		'2',
+		'3',
+		'4',
+		'5',
+		'6',
+		'7',
+		'8',
+		'9',
+		'10',
+		'11',
+		'12']
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
@@ -83,11 +98,11 @@ while(not finish):
 			finish=True
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			mouseX,mouseY=pygame.mouse.get_pos()
-			if(stage<0):
+			if(stage<0):#Credits and help
 				if(mouseX>=18 and mouseX<=78 and mouseY>=18 and mouseY<=41):
 					stage=0
 
-			elif(stage==0):
+			elif(stage==0):#Start
 				if(mouseX>=160 and mouseX<=240 and mouseY>=150 and mouseY<=175):
 					stage=1
 				elif(mouseX>=160 and mouseX<=240 and mouseY>=195 and mouseY<=220):
@@ -95,12 +110,12 @@ while(not finish):
 				elif(mouseX>=160 and mouseX<=240 and mouseY>=240 and mouseY<=265):
 					stage=-2
 
-			elif(stage==1):
+			elif(stage==1):#Seed select
 				#print(ceil(mouseX/(400/3)), ceil(mouseY/(300/3)), )
 				flowerNum=ceil(mouseX/(400/3))-4+(ceil(mouseY/(300/3))*3)
 				stage=2
 
-			elif(stage==2):
+			elif(stage==2):#Main game
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					dosh=0
 					mInc=1
@@ -113,9 +128,14 @@ while(not finish):
 					dosh+=mInc
 					tes+=tInc
 
-			elif(stage==3):
+			elif(stage==3):#Shop screen
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
+				if(mouseX>=82):
+					shopPrint(mouseX,mouseY,prices)
+					"""print(floor(mouseX/80)-1)
+					print(floor(mouseY/100))
+					print((floor(mouseX/80)-1)+(4*floor(mouseY/100)))"""
 
 	screen.fill(white)
 	if(stage==-2):#Credits
