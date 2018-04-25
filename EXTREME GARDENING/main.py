@@ -37,7 +37,7 @@ sFont=pygame.font.SysFont('Impact',45)#starting font
 cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
-prices=['1',
+prices=['1',#Price of each shop item
 		'2',
 		'3',
 		'4',
