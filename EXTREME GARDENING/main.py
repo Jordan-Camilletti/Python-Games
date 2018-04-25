@@ -49,6 +49,7 @@ prices=['1',
 		'10',
 		'11',
 		'12']
+inc=[]
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
