@@ -247,7 +247,7 @@ while(not finish):
 		screen.blit(font1.render("Movies",False,black), (280-16.5,285))
 		screen.blit(font1.render("SLIM JIMS™",False,black), (360-31,285))
 
-		for n in range(1,5):
+		for n in range(1,5):#Drawling shop grid
 			pygame.draw.rect(screen,black,(n*80,0,1,300),2)
 		pygame.draw.rect(screen,black,(398,0,1,300),2)
 		for n in range(3):
