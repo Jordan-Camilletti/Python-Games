@@ -51,16 +51,16 @@ prices=['1',#Price of each shop item
 		'12']
 inc=[[0,0],#Increase of each shop item
     		[0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0]]
+  		[0,0],
+  		[0,0],
+  		[0,0],
+  		[0,0],
+  		[0,0],
+    		[0,0],
+    		[0,0],
+    		[0,0],
+    		[0,0],
+    		[0,0]]
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
