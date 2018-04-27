@@ -14,9 +14,11 @@ screen=pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Sierpinski's Carpet")
 
 while(not finish):
-  for event in pygame.event.get():
+	for event in pygame.event.get():
     
-	pygame.time.wait(250)
+	if(not pause):
+		turn+=1
+		pygame.time.wait(250)
 	pygame.display.update()
   
 pygame.quit()
