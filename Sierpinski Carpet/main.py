@@ -16,7 +16,8 @@ pygame.display.set_caption("Sierpinski's Carpet")
 while(not finish):
   for event in pygame.event.get():
     
-  pygame.display.update()
+	pygame.time.wait(250)
+	pygame.display.update()
   
 pygame.quit()
 quit()
