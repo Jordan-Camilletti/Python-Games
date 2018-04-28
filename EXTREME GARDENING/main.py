@@ -6,9 +6,9 @@ import pygame
 from math import floor, ceil
 
 def shopPrint(x,y,prices):
-	price=prices[(floor(mouseX/80)-1)+(4*floor(mouseY/100))]
-	screen.blit(font1.render(price,False,black), (320,80))
-	#TODO: fill this out
+	price=prices[(floor(x/80)-1)+(4*floor(y/100))]
+	#screen.blit(font1.render(price,False,black), (320,80))
+	print(price)
 
 def findSize(size, tes):#Gets the size of the flower based on clicks
 	tPercent=(tes/500.0)
@@ -50,17 +50,17 @@ prices=['1',#Price of each shop item
 		'11',
 		'12']
 inc=[[0,0],#Increase of each shop item
-    		[0,0],
-  		[0,0],
-  		[0,0],
-  		[0,0],
-  		[0,0],
-  		[0,0],
-    		[0,0],
-    		[0,0],
-    		[0,0],
-    		[0,0],
-    		[0,0]]
+	[0,0],
+  	[0,0],
+  	[0,0],
+  	[0,0],
+  	[0,0],
+  	[0,0],
+    [0,0],
+    [0,0],
+    [0,0],
+    [0,0],
+    [0,0]]
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
