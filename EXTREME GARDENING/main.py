@@ -5,7 +5,8 @@
 import pygame
 from math import floor, ceil
 
-def shopPrint(x,y,prices):
+def shopPrint(x,y,,prices):
+	with open('Descriptions.txt','r') as r:
 	price=prices[(floor(x/80)-1)+(4*floor(y/100))]
 	#screen.blit(font1.render(price,False,black), (320,80))
 	print(price)
