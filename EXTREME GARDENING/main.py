@@ -37,16 +37,7 @@ cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
 
-names=["Bro's Rose",
-		"Protien Petunia",
-		"No Homo Hibiscus",
-		"Tulip of Testosterone",
-		"Beast Mode Blue Bonnet",
-		"Dude's Daffodil",
-		"Whey Waterlily",
-		"Lifting Lavender",
-		"'Sup Buttercup"]
-seedPhotos=['Seeds/rose1.jpg',
+"""seedPhotos=['Seeds/rose1.jpg',
 		'Seeds/petunia1.jpg',
 		'Seeds/hib1.png',
 		'Seeds/tulip1.jpg',
@@ -54,7 +45,7 @@ seedPhotos=['Seeds/rose1.jpg',
 		'Seeds/daffodil1.jpg',
 		'Seeds/waterlily1.png',
 		'Seeds/lavender1.jpg',
-		'Seeds/buttercup1.jpg']
+		'Seeds/buttercup1.jpg']"""
 plantPhotos=['Plants/rose2.jpg',
 			'Plants/petunia2.jpg',
 			'Plants/hib2.jpg',
@@ -76,14 +67,13 @@ shopPhotos=['Upgrades/soil.jpg',
 			'Upgrades/mitochondria.png',
 			'Upgrades/movie.jpg',
 			'Upgrades/slim.jpg']
-#text=font.render("ABC",False,black)
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
 
-"""descFile=open('Descriptions.txt','r')
-print(descFile.readlines())"""
-descriptions=open('Descriptions.txt','r').readlines()
+descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info from Texts
+names=open('Texts/Names.txt','r').readlines()
+seedPhotos=open('Texts/Photos.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -172,8 +162,8 @@ while(not finish):
 			pygame.draw.rect(screen,black,[0,(n*100)-2,400,2])
 
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
-			screen.blit(font1.render(names[name],False,black) , (gridDisplay(name,1)-(font1.render(names[name],False,black).get_width()/2) , gridDisplay(name,0)+85))
-			img=pygame.image.load(seedPhotos[name])
+			screen.blit(font1.render(names[name][:-1],False,black) , (gridDisplay(name,1)-(font1.render(names[name],False,black).get_width()/2) , gridDisplay(name,0)+85))
+			img=pygame.image.load(seedPhotos[name][:-1])
 			screen.blit(img, (gridDisplay(name,1)-40 , gridDisplay(name,0)+5))
 			#((1+(name%3))*66)+((name%3)*66)
 			#(floor(name/3)*100)
