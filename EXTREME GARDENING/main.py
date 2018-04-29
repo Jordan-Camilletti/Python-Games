@@ -5,7 +5,7 @@
 import pygame
 from math import floor, ceil
 
-def shopPrint(x,y,d,prices):
+def shopPrint(x,y,d):
 	desc=d[(floor(x/80)-1)+(4*floor(y/100))]
 	print(desc)
 
@@ -36,30 +36,7 @@ sFont=pygame.font.SysFont('Impact',45)#starting font
 cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
-prices=[10,#Price of each shop item
-		20,
-		30,
-		40,
-		50,
-		60,
-		70,
-		80,
-		90,
-		100,
-		110,
-		120]
-inc=[[0,0],#Increase of each shop item
-	[0,0],
-  	[0,0],
-  	[0,0],
-  	[0,0],
-  	[0,0],
-  	[0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0]]
+
 names=["Bro's Rose",
 		"Protien Petunia",
 		"No Homo Hibiscus",
@@ -148,7 +125,7 @@ while(not finish):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					shopPrint(mouseX,mouseY,descriptions,prices)
+					shopPrint(mouseX,mouseY,descriptions)
 					"""print(floor(mouseX/80)-1)
 					print(floor(mouseY/100))
 					print((floor(mouseX/80)-1)+(4*floor(mouseY/100)))"""
