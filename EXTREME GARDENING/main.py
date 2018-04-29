@@ -5,11 +5,9 @@
 import pygame
 from math import floor, ceil
 
-def shopPrint(x,y,desc,prices):
-	#with open(desc,'r') as r:
-	price=prices[(floor(x/80)-1)+(4*floor(y/100))]
-	#screen.blit(font1.render(price,False,black), (320,80))
-	print(price)
+def shopPrint(x,y,d,prices):
+	desc=d[(floor(x/80)-1)+(4*floor(y/100))]
+	print(desc)
 
 def findSize(size, tes):#Gets the size of the flower based on clicks
 	tPercent=(tes/500.0)
@@ -106,11 +104,9 @@ screen=pygame.display.set_mode((400,300))
 screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
 
-with open('Descriptions.txt','r') as r:
-	for line in (r):
-		print(line)
 """descFile=open('Descriptions.txt','r')
 print(descFile.readlines())"""
+descriptions=open('Descriptions.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -152,7 +148,7 @@ while(not finish):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					shopPrint(mouseX,mouseY,'Descriptions.txt',prices)
+					shopPrint(mouseX,mouseY,descriptions,prices)
 					"""print(floor(mouseX/80)-1)
 					print(floor(mouseY/100))
 					print((floor(mouseX/80)-1)+(4*floor(mouseY/100)))"""
