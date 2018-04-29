@@ -25,9 +25,9 @@ white=(255,255,255)
 black=(0,0,0)
 red=(255,0,0)
 finish=False
-dosh=0
 mInc=1#Money increase
 tInc=1#Testosterone increase
+dosh=0#Money
 tes=0#Testosterone leves
 flowerNum=0
 stage=0#-2=credits,-1=help,0=menu,1=seed,2=grow,3=upgrade
