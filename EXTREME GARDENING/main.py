@@ -37,18 +37,18 @@ sFont=pygame.font.SysFont('Impact',45)#starting font
 cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
-prices=['1',#Price of each shop item
-		'2',
-		'3',
-		'4',
-		'5',
-		'6',
-		'7',
-		'8',
-		'9',
-		'10',
-		'11',
-		'12']
+prices=[10,#Price of each shop item
+		20,
+		30,
+		40,
+		50,
+		60,
+		70,
+		80,
+		90,
+		100,
+		110,
+		120]
 inc=[[0,0],#Increase of each shop item
 	[0,0],
   	[0,0],
@@ -104,6 +104,11 @@ shopPhotos=['Upgrades/soil.jpg',
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
+
+with open('Descriptions.txt','r') as r:
+	for line in (r):
+		print(line)
+
 
 while(not finish):
 	for event in pygame.event.get():
