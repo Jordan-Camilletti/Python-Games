@@ -30,50 +30,20 @@ mInc=1#Money increase
 tInc=1#Testosterone increase
 tes=0#Testosterone leves
 flowerNum=0
-stage=0#-2=credits,-1=help,0=menu,1==seed,2=grow,3=upgrade
+stage=0#-2=credits,-1=help,0=menu,1=seed,2=grow,3=upgrade
 
 sFont=pygame.font.SysFont('Impact',45)#starting font
 cFont=pygame.font.SysFont('Arial', 15)#credits font
 font1=pygame.font.SysFont('Arial', 10)
 font2=pygame.font.SysFont('Arial', 20)
 
-"""seedPhotos=['Seeds/rose1.jpg',
-		'Seeds/petunia1.jpg',
-		'Seeds/hib1.png',
-		'Seeds/tulip1.jpg',
-		'Seeds/bonnet1.jpg',
-		'Seeds/daffodil1.jpg',
-		'Seeds/waterlily1.png',
-		'Seeds/lavender1.jpg',
-		'Seeds/buttercup1.jpg']"""
-plantPhotos=['Plants/rose2.jpg',
-			'Plants/petunia2.jpg',
-			'Plants/hib2.jpg',
-			'Plants/tulip2.jpg',
-			'Plants/bonnet2.jpg',
-			'Plants/daffodil2.jpg',
-			'Plants/waterlily2.jpg',
-			'Plants/lavender2.jpg',
-			'Plants/buttercup2.jpg']
-shopPhotos=['Upgrades/soil.jpg',
-			'Upgrades/words.png',
-			'Upgrades/capital.png',
-			'Upgrades/flower.jpg',
-			'Upgrades/powder.jpg',
-			'Upgrades/job.jpg',
-			'Upgrades/gloves.jpg',
-			'Upgrades/gym.jpg',
-			'Upgrades/UV.jpg',
-			'Upgrades/mitochondria.png',
-			'Upgrades/movie.jpg',
-			'Upgrades/slim.jpg']
 screen=pygame.display.set_mode((400,300))
 screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
 
 descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info from Texts
 names=open('Texts/Names.txt','r').readlines()
-seedPhotos=open('Texts/Photos.txt','r').readlines()
+photos=open('Texts/Photos.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -163,12 +133,12 @@ while(not finish):
 
 		for name in range(len(names)):#This extremely long line is for displaying the names on a 9x9 grid
 			screen.blit(font1.render(names[name][:-1],False,black) , (gridDisplay(name,1)-(font1.render(names[name],False,black).get_width()/2) , gridDisplay(name,0)+85))
-			img=pygame.image.load(seedPhotos[name][:-1])
+			img=pygame.image.load(photos[name][:-1])
 			screen.blit(img, (gridDisplay(name,1)-40 , gridDisplay(name,0)+5))
 			#((1+(name%3))*66)+((name%3)*66)
 			#(floor(name/3)*100)
 
-	elif(stage==2):#Main
+	elif(stage==2):#Main game
 		pygame.draw.rect(screen,black,(15,14,58,25),3)
 		screen.blit(font2.render("Exit",False,black), (20,15))	
 		pygame.draw.rect(screen,black,(15,45,58,25),3)
@@ -179,7 +149,7 @@ while(not finish):
 		screen.blit(font1.render("Testosterone:",False,black),(320,45))
 		screen.blit(font1.render("{0} ng/dl".format(tes),False,black),(320,55))
 
-		img=pygame.image.load(plantPhotos[flowerNum])
+		img=pygame.image.load(photos[flowerNum+9][:-1])
 		currImg=pygame.transform.scale(img, (findSize(img.get_width(),tes), findSize(img.get_height(),tes)))
 		screen.blit(currImg, (200-(currImg.get_width()/2),300-currImg.get_height()))	
 		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
@@ -224,8 +194,8 @@ while(not finish):
 			pygame.draw.rect(screen,black,(80,n*100,400,1),2)
 		pygame.draw.rect(screen,black,(80,298,400,1),2)
 
-		for name in range(len(shopPhotos)):
-			img=pygame.image.load(shopPhotos[name])
+		for name in range(12):
+			img=pygame.image.load(photos[name+18][:-1])
 			screen.blit(img, (2+(80*(1+(name%4))) , 2+(100*floor(name/4))))
 
 	pygame.display.update()
