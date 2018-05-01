@@ -44,6 +44,7 @@ pygame.display.set_caption("EXTREME GARDENING!")
 descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info from Texts
 names=open('Texts/Names.txt','r').readlines()
 photos=open('Texts/Photos.txt','r').readlines()
+shops=open('Texts/Shops.txt','r').readLines()
 
 while(not finish):
 	for event in pygame.event.get():
