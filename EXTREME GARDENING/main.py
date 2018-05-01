@@ -8,6 +8,7 @@ from math import floor, ceil
 def shopPrint(x,y,d):
 	desc=d[(floor(x/80)-1)+(4*floor(y/100))]
 	print(desc)
+	return(floor(x/80)-1)+(4*floor(y/100))
 
 def findSize(size, tes):#Gets the size of the flower based on clicks
 	tPercent=(tes/500.0)
@@ -25,6 +26,7 @@ white=(255,255,255)
 black=(0,0,0)
 red=(255,0,0)
 finish=False
+confirm=-1
 mInc=1#Money increase
 tInc=1#Testosterone increase
 dosh=0#Money
@@ -86,7 +88,7 @@ while(not finish):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					shopPrint(mouseX,mouseY,descriptions)
+					confirm=shopPrint(mouseX,mouseY,descriptions)
 					"""print(floor(mouseX/80)-1)
 					print(floor(mouseY/100))
 					print((floor(mouseX/80)-1)+(4*floor(mouseY/100)))"""
