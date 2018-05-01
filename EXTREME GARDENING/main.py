@@ -26,7 +26,8 @@ white=(255,255,255)
 black=(0,0,0)
 red=(255,0,0)
 finish=False
-confirm=-1
+confirm1=-1
+confirm2=-1
 mInc=1#Money increase
 tInc=1#Testosterone increase
 dosh=0#Money
@@ -85,10 +86,16 @@ while(not finish):
 					tes+=tInc
 
 			elif(stage==3):#Shop screen
+				
+				
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					confirm=shopPrint(mouseX,mouseY,descriptions)
+					confirm1=shopPrint(mouseX,mouseY,description)
+					if(confirm1==confirm2):
+						#buy
+					else:
+						confirm2=confirm1
 					"""print(floor(mouseX/80)-1)
 					print(floor(mouseY/100))
 					print((floor(mouseX/80)-1)+(4*floor(mouseY/100)))"""
