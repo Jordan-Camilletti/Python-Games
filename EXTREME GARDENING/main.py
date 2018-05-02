@@ -47,7 +47,7 @@ pygame.display.set_caption("EXTREME GARDENING!")
 descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info from Texts
 names=open('Texts/Names.txt','r').readlines()
 photos=open('Texts/Photos.txt','r').readlines()
-shops=open('Texts/Shops.txt','r').readLines()
+shops=open('Texts/Shops.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -91,10 +91,12 @@ while(not finish):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					confirm1=shopPrint(mouseX,mouseY,description)
+					confirm1=shopPrint(mouseX,mouseY,descriptions)
 					if(confirm1==confirm2):
+						print("n")
 						#buy
 					else:
+						print("Click again to buy\n")
 						confirm2=confirm1
 					"""print(floor(mouseX/80)-1)
 					print(floor(mouseY/100))
