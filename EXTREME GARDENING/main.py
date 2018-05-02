@@ -5,9 +5,13 @@
 import pygame
 from math import floor, ceil
 
-def shopPrint(x,y,d):
+def buy(costs,choice):
+	print(costs[choice])
+
+def shopPrint(x,y,d,c):
 	desc=d[(floor(x/80)-1)+(4*floor(y/100))]
-	print(desc)
+	if(c!=(floor(x/80)-1)+(4*floor(y/100))):
+		print(desc)
 	return(floor(x/80)-1)+(4*floor(y/100))
 
 def findSize(size, tes):#Gets the size of the flower based on clicks
@@ -91,10 +95,9 @@ while(not finish):
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					confirm1=shopPrint(mouseX,mouseY,descriptions)
+					confirm1=shopPrint(mouseX,mouseY,descriptions,confirm2)
 					if(confirm1==confirm2):
-						print("n")
-						#buy
+						buy(shops,confirm1)
 					else:
 						print("Click again to buy\n")
 						confirm2=confirm1
