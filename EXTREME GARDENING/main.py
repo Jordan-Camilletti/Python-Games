@@ -7,10 +7,11 @@ from math import floor, ceil
 
 def buy(costs,choice):
 	print(costs[choice])
+	return(int(costs[choice][:-1]))
 
-def shopPrint(x,y,d,c):
+def shopPrint(x,y,d,cos,con):
 	desc=d[(floor(x/80)-1)+(4*floor(y/100))]
-	if(c!=(floor(x/80)-1)+(4*floor(y/100))):
+	if(con!=(floor(x/80)-1)+(4*floor(y/100))):
 		print(desc)
 	return(floor(x/80)-1)+(4*floor(y/100))
 
@@ -90,15 +91,14 @@ while(not finish):
 					tes+=tInc
 
 			elif(stage==3):#Shop screen
-				
-				
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
 				if(mouseX>=82):
-					confirm1=shopPrint(mouseX,mouseY,descriptions,confirm2)
+					confirm1=shopPrint(mouseX,mouseY,descriptions,shops,confirm2)
 					if(confirm1==confirm2):
-						buy(shops,confirm1)
+						dosh-=buy(shops,confirm1)
 					else:
+						print("Costs ¥{0}".format(shops[confirm1]))
 						print("Click again to buy\n")
 						confirm2=confirm1
 					"""print(floor(mouseX/80)-1)
