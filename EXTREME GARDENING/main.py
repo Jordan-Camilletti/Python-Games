@@ -8,6 +8,8 @@ from math import floor, ceil
 def buy(costs,choice):
 	incs=[0.0,0.0,0.0]#returns cost, dosh inc, tes inc
 	incs[0]=int(costs[choice].split(" ")[0])
+	incs[1]=int(costs[choice].split(" ")[1])
+	incs[2]=int(costs[choice].split(" ")[2])
 	#print(costs[choice])
 	return(incs)
 
@@ -101,6 +103,8 @@ while(not finish):
 					if(confirm1==confirm2):
 						changes=buy(shops,confirm1)
 						dosh-=changes[0]
+						mInc+=changes[1]
+						tInc+=changes[2]
 					else:
 						print("Costs ¥{0}".format(shops[confirm1].split(" ")[0]))
 						print("Click again to buy\n")
