@@ -6,6 +6,7 @@ import pygame
 from math import floor, ceil
 
 def buy(costs,choice):
+	incs=[0.0,0.0,0.0]#returns cost, dosh inc, tes inc
 	print(costs[choice])
 	return(int(costs[choice][:-1]))
 
