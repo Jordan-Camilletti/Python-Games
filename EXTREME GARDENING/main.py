@@ -5,11 +5,12 @@
 import pygame
 from math import floor, ceil
 
-def buy(costs,choice):
+def buy(costs,choice,dosh):
 	incs=[0.0,0.0,0.0]#returns cost, dosh inc, tes inc
-	incs[0]=int(costs[choice].split(" ")[0])
-	incs[1]=int(costs[choice].split(" ")[1])
-	incs[2]=int(costs[choice].split(" ")[2])
+	if(int(costs[choice].split(" ")[0])<=dosh):
+		incs[0]=int(costs[choice].split(" ")[0])
+		incs[1]=int(costs[choice].split(" ")[1])
+		incs[2]=int(costs[choice].split(" ")[2])
 	#print(costs[choice])
 	return(incs)
 
@@ -57,7 +58,6 @@ descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info fro
 names=open('Texts/Names.txt','r').readlines()
 photos=open('Texts/Photos.txt','r').readlines()
 shops=open('Texts/Shops.txt','r').readlines()
-#incs=open('Texts/Incs.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -101,7 +101,7 @@ while(not finish):
 				if(mouseX>=82):
 					confirm1=shopPrint(mouseX,mouseY,descriptions,shops,confirm2)
 					if(confirm1==confirm2):
-						changes=buy(shops,confirm1)
+						changes=buy(shops,confirm1,dosh)
 						dosh-=changes[0]
 						mInc+=changes[1]
 						tInc+=changes[2]
