@@ -7,8 +7,8 @@ from math import floor, ceil
 
 def buy(costs,choice):
 	incs=[0.0,0.0,0.0]#returns cost, dosh inc, tes inc
-	incs[0]=int(costs[choice][:-1])
-	print(costs[choice])
+	incs[0]=int(costs[choice].split(" ")[0])
+	#print(costs[choice])
 	return(incs)
 
 def shopPrint(x,y,d,cos,con):
@@ -55,7 +55,7 @@ descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info fro
 names=open('Texts/Names.txt','r').readlines()
 photos=open('Texts/Photos.txt','r').readlines()
 shops=open('Texts/Shops.txt','r').readlines()
-incs=open('Texts/Incs.txt','r').readlines()
+#incs=open('Texts/Incs.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -99,9 +99,10 @@ while(not finish):
 				if(mouseX>=82):
 					confirm1=shopPrint(mouseX,mouseY,descriptions,shops,confirm2)
 					if(confirm1==confirm2):
-						dosh-=buy(shops,confirm1)
+						changes=buy(shops,confirm1)
+						dosh-=changes[0]
 					else:
-						print("Costs ¥{0}".format(shops[confirm1]))
+						print("Costs ¥{0}".format(shops[confirm1].split(" ")[0]))
 						print("Click again to buy\n")
 						confirm2=confirm1
 					"""print(floor(mouseX/80)-1)
