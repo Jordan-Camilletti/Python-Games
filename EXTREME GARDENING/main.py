@@ -7,8 +7,9 @@ from math import floor, ceil
 
 def buy(costs,choice):
 	incs=[0.0,0.0,0.0]#returns cost, dosh inc, tes inc
+	incs[0]=int(costs[choice][:-1])
 	print(costs[choice])
-	return(int(costs[choice][:-1]))
+	return(incs)
 
 def shopPrint(x,y,d,cos,con):
 	desc=d[(floor(x/80)-1)+(4*floor(y/100))]
