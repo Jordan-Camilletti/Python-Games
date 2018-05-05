@@ -21,7 +21,7 @@ def shopPrint(x,y,d,cos,con):
 	return(floor(x/80)-1)+(4*floor(y/100))
 
 def findSize(size, tes):#Gets the size of the flower based on clicks
-	tPercent=(tes/500.0)
+	tPercent=(tes/1000.0)
 	nSize=floor(size*tPercent)
 	return(nSize)
 
@@ -98,6 +98,8 @@ while(not finish):
 			elif(stage==3):#Shop screen
 				if(mouseX>=15 and mouseX<=73 and mouseY>=14 and mouseY<=39):
 					stage=2
+					confirm1=-1
+					confirm2=-2
 				if(mouseX>=82):
 					confirm1=shopPrint(mouseX,mouseY,descriptions,shops,confirm2)
 					if(confirm1==confirm2):
