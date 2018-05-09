@@ -11,10 +11,10 @@ pygame.init()
 white=(255,255,255)
 black=(0,0,0)
 turn=0
-currSize=0
+currSize=300
 finish=False
 pause=False
-screen=pygame.display.set_mode((800, 800))
+screen=pygame.display.set_mode((900, 900))
 pygame.display.set_caption("Sierpinski's Carpet")
 
 while(not finish):
