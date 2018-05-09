@@ -4,7 +4,7 @@
 
 import pygame
 
-def findSize(int curr, int turn, int width, int height):
+def findSize(int turn, int width, int height):
 	#
 
 pygame.init()
