@@ -4,6 +4,9 @@
 
 import pygame
 
+def findSize(int curr, int turn, int width, int height):
+	#
+
 pygame.init()
 white=(255,255,255)
 black=(0,0,0)
@@ -24,3 +27,5 @@ while(not finish):
   
 pygame.quit()
 quit()
+
+
