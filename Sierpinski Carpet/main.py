@@ -27,5 +27,3 @@ while(not finish):
   
 pygame.quit()
 quit()
-
-
