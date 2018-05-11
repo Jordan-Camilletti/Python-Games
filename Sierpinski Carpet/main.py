@@ -4,7 +4,7 @@
 
 import pygame
 
-def findSize(turn,width,height):
+def findSize(turn):
 	return(0)
 
 pygame.init()
@@ -25,7 +25,10 @@ while(not finish):
 	if(not pause):
 		turn+=1
 		pygame.time.wait(250)
+		pygame.draw.rect(screen,white,[900/(3**1),900/(3**1),900/(3**1),900/(3**1)])
+		pygame.draw.rect(screen,white,[900/(3**2),900/(3**2),900/(3**2),900/(3**2)])
+		pygame.draw.rect(screen,white,[900/(3**3),900/(3**3),900/(3**3),900/(3**3)])
 	pygame.display.update()
-	
+
 pygame.quit()
 quit()
