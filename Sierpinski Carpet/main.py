@@ -4,8 +4,8 @@
 
 import pygame
 
-def findSize(int turn, int width, int height):
-	#
+def findSize(turn,width,height):
+	return(0)
 
 pygame.init()
 white=(255,255,255)
@@ -19,11 +19,13 @@ pygame.display.set_caption("Sierpinski's Carpet")
 
 while(not finish):
 	for event in pygame.event.get():
-    
+		if(event.type==pygame.QUIT):
+			finish=True
+
 	if(not pause):
 		turn+=1
 		pygame.time.wait(250)
 	pygame.display.update()
-  
+	
 pygame.quit()
 quit()
