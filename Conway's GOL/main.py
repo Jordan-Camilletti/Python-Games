@@ -71,5 +71,6 @@ while(not finish):
 					pygame.draw.rect(screen,black,[xPos*5,yPos*5,5,5])
 		pygame.time.wait(250)
 	pygame.display.update()
+
 pygame.quit()
 quit()

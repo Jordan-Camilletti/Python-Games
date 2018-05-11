@@ -32,6 +32,6 @@ while(not finish):
 		pygame.draw.rect(screen,white,[900/(3**3),900/(3**3),900/(3**3),900/(3**3)])"""
 		pygame.time.wait(1000)
 	pygame.display.update()
-
+	
 pygame.quit()
 quit()
