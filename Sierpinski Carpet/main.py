@@ -3,9 +3,10 @@
 """
 
 import pygame
+import math
 
 def findSize(t):
-	return(900/(3**t))
+	return(math.floor(900/(3**t)))
 	
 pygame.init()
 white=(255,255,255)
@@ -28,9 +29,21 @@ while(not finish):
 	if(not pause):
 		turn+=1
 		t=findSize(turn)
-		print(9**(turn-1))
+		#print(9**(turn-1))
+		#print(t)
 		for n in range(9**(turn-1)):
-			pygame.draw.rect(screen,white,[t,t,t,t])
+			#print(t+(math.floor(n%3)*findSize(turn-1)),t+(math.floor(n/3)*findSize(turn-1)))
+		#print("\n")
+			pygame.draw.rect(screen,white,[t+(math.floor(n%3)*findSize(turn-1)),t+(math.floor(n/3)*findSize(turn-1)),t,t])
+		"""pygame.draw.rect(screen,white,[300,300,300,300])
+		pygame.draw.rect(screen,white,[100,100,100,100])
+		pygame.draw.rect(screen,white,[400,100,100,100])
+		pygame.draw.rect(screen,white,[700,100,100,100])
+		pygame.draw.rect(screen,white,[100,100,100,100])
+		pygame.draw.rect(screen,white,[700,700,100,100])
+		pygame.draw.rect(screen,white,[33,33,33,33])
+		pygame.draw.rect(screen,white,[133,33,33,33])
+		pygame.draw.rect(screen,white,[33,133,33,33])"""
 
 		"""pygame.draw.rect(screen,white,[900/(3**1),900/(3**1),900/(3**1),900/(3**1)])
 		pygame.draw.rect(screen,white,[900/(3**2),900/(3**2),900/(3**2),900/(3**2)])
