@@ -28,8 +28,10 @@ while(not finish):
 	if(not pause):
 		turn+=1
 		t=findSize(turn)
+		print(9**(turn-1))
 		for n in range(9**(turn-1)):
 			pygame.draw.rect(screen,white,[t,t,t,t])
+
 		"""pygame.draw.rect(screen,white,[900/(3**1),900/(3**1),900/(3**1),900/(3**1)])
 		pygame.draw.rect(screen,white,[900/(3**2),900/(3**2),900/(3**2),900/(3**2)])
 		pygame.draw.rect(screen,white,[900/(3**3),900/(3**3),900/(3**3),900/(3**3)])"""
