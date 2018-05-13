@@ -21,6 +21,9 @@ while(not finish):
 	for event in pygame.event.get():
 		if(event.type==pygame.QUIT):
 			finish=True
+		if(event.type == pygame.KEYDOWN):#Space=pause/unpause
+			if(event.key == pygame.K_SPACE):
+				pause=not pause
 
 	if(not pause):
 		turn+=1
