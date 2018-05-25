@@ -1,6 +1,8 @@
 #EXTREME GARDENING
-"""
-"""
+"""IT'S GARDENING
+IT'S EXTREME
+IT'S PLAYED BY CLICKING
+IT'S EXTREME GARDENING"""
 
 import pygame
 from math import floor, ceil
