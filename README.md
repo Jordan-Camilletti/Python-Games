@@ -12,5 +12,6 @@ Space pauses/unpauses, click on a square to change it.
 CLICK! CLICK! CLICK! CLICK!
 ~~~
 ~~~
-3. S Carpet: A cool looking
+3. Sierpinski's Carpet: A cool looking fractal sqaure pattern 
+Space pauses/unpauses
 ~~~
