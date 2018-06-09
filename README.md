@@ -1,5 +1,5 @@
-# PYGames
-A collection of python games made using pygames.
+# Python Games
+A collection of python games made using mostly pygames.
 Most will be basic games made for fun
 
 Games:
