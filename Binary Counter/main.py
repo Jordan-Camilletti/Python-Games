@@ -24,9 +24,8 @@ while(not finish):
 			pygame.draw.rect(screen,white,[int(n/4)*50,(n%4)*25,50,25])
 		else:
 			pygame.draw.rect(screen,black,[int(n/4)*50,(n%4)*25,50,25])
-	#	pygame.draw.rect(screen,black,[0,int(n/4)*25,50,25*int(bCount[n])])
 
-	pygame.time.wait(1)
+	pygame.time.wait(100)
 	pygame.display.update()
 
 pygame.quit()
