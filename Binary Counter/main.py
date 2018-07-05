@@ -5,8 +5,7 @@ finish=False
 white=(255,255,255)
 black=(0,0,0)
 
-#9p x 1p
-#8.86 x 1
+#8.86p x 1p
 #6c x 4c
 count=0
 screen=pygame.display.set_mode((int(100*8.86),100))
