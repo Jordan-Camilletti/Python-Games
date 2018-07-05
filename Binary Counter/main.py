@@ -18,10 +18,15 @@ while(not finish):
 
 	count+=1
 	bCount="{0:b}".format(count)
+	#print(bCount)
 	for n in range(len(bCount)):
-		pygame.draw.rect(screen,black,[0,int(n/4)*25,50,25*int(bCount[n])])
+		if(bCount[n]=="0"):
+			pygame.draw.rect(screen,white,[int(n/4)*50,(n%4)*25,50,25])
+		else:
+			pygame.draw.rect(screen,black,[int(n/4)*50,(n%4)*25,50,25])
+	#	pygame.draw.rect(screen,black,[0,int(n/4)*25,50,25*int(bCount[n])])
 
-	pygame.time.wait(1000)
+	pygame.time.wait(50)
 	pygame.display.update()
 
 pygame.quit()
