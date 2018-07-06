@@ -1,4 +1,5 @@
 import pygame
+from random import randint
 
 pygame.init()
 finish=False
@@ -23,7 +24,7 @@ while(not finish):
 		if(bCount[n]=="0"):
 			pygame.draw.rect(screen,white,[int(n/4)*50,(n%4)*25,50,25])
 		else:
-			pygame.draw.rect(screen,black,[int(n/4)*50,(n%4)*25,50,25])
+			pygame.draw.rect(screen,(randint(0,255),screen,(randint(0,255),screen,(randint(0,255)),[int(n/4)*50,(n%4)*25,50,25])
 
 	pygame.time.wait(100)
 	pygame.display.update()
