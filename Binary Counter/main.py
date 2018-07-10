@@ -9,7 +9,9 @@ black=(0,0,0)
 #8.86pix x 1pix
 #6squares x 4squares
 count=0
-screen=pygame.display.set_mode((int(100*8.86),100))
+yLen=100
+xLen=yLen*8.86
+screen=pygame.display.set_mode((xLen,yLen))
 screen.fill(white)
 
 while(not finish):
