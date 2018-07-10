@@ -25,7 +25,7 @@ while(not finish):
 	for n in range(len(bCount)):
 		if(bCount[n]=="0"):
 			pygame.draw.rect(screen,white, [int(n/4)*50,(n%4)*25,50,25])
-		else:
+		elif(bCount[n]=="1" and screen.get_at((int(n/4)*50,(n%4)*25)) == (255,255,255,255)):#This last part makes colors less 'ravey'
 			pygame.draw.rect(screen, (randint(0,255),randint(0,255),randint(0,255)), [int(n/4)*50,(n%4)*25,50,25])
 
 	pygame.time.wait(100)
