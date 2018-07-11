@@ -3,7 +3,6 @@ from random import randint
 
 pygame.init()
 finish=False
-white=(255,255,255)
 
 #8.86pix x 1pix
 #6squares x 4squares
@@ -25,7 +24,7 @@ while(not finish):
 	#print(bCount)
 	for n in range(len(bCount)):
 		if(bCount[n]=="0"):
-			pygame.draw.rect(screen,white, [int(n/4)*xSqr,(n%4)*ySqr,xSqr,ySqr])
+			pygame.draw.rect(screen, (255,255,255), [int(n/4)*xSqr,(n%4)*ySqr,xSqr,ySqr])
 		elif(bCount[n]=="1" and screen.get_at((int(n/4)*xSqr,(n%4)*ySqr)) == (255,255,255,255)):#This last part makes colors less 'ravey'
 			pygame.draw.rect(screen, (randint(0,255),randint(0,255),randint(0,255)), [int(n/4)*xSqr,(n%4)*ySqr,xSqr,ySqr])
 
