@@ -7,7 +7,7 @@ finish=False
 #8.86pix x 1pix
 #6squares x 4squares
 count=0
-yLen=100
+yLen=input()
 ySqr=int(yLen/4)
 xLen=int(yLen*8.86)
 xSqr=int(xLen/6)
