@@ -21,7 +21,6 @@ while(not finish):
 
 	count+=1
 	bCount=("{0:b}".format(count))[::-1]
-	#print(bCount)
 	for n in range(len(bCount)):
 		if(bCount[n]=="0"):
 			pygame.draw.rect(screen, (255,255,255), [int(n/4)*xSqr,(n%4)*ySqr,xSqr,ySqr])
