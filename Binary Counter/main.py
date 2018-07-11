@@ -4,7 +4,6 @@ from random import randint
 pygame.init()
 finish=False
 white=(255,255,255)
-black=(0,0,0)
 
 #8.86pix x 1pix
 #6squares x 4squares
