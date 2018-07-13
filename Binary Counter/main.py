@@ -1,4 +1,5 @@
 import pygame
+import time
 from random import randint
 
 pygame.init()
@@ -6,6 +7,7 @@ pygame.init()
 #8.86pix x 1pix
 #6squares x 4squares
 finish=False
+timer=0
 count=0
 yLen=input()
 ySqr=int(yLen/4)
