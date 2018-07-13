@@ -7,12 +7,12 @@ pygame.init()
 #8.86pix x 1pix
 #6squares x 4squares
 finish=False
-timer=time.time()
 count=0
 yLen=input()
 ySqr=int(yLen/4)
 xLen=int(yLen*8.86)
 xSqr=int(xLen/6)
+timer=time.time()
 screen=pygame.display.set_mode((xLen,yLen))
 screen.fill(white)
 
@@ -21,6 +21,7 @@ while(not finish):
 		if(event.type==pygame.QUIT):
 			finish=True
 
+	print(timer)
 	count+=1
 	bCount=("{0:b}".format(count))[::-1]
 	for n in range(len(bCount)):
