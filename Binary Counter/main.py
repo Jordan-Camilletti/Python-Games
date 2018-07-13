@@ -8,13 +8,13 @@ pygame.init()
 #6squares x 4squares
 finish=False
 count=0
-yLen=input()
+yLen=int(input("Enter window height\n"))
 ySqr=int(yLen/4)
 xLen=int(yLen*8.86)
 xSqr=int(xLen/6)
 timer=time.time()
 screen=pygame.display.set_mode((xLen,yLen))
-screen.fill(white)
+screen.fill((255,255,255))
 
 while(not finish):
 	for event in pygame.event.get():
