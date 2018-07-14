@@ -1,3 +1,8 @@
+"""This is a timer similar to the one used for GDQ/AGDQ
+But this one actually counts with binary correctly
+I couldn't stop focusing on how the GDQ counter was off with the binary counting
+So I built my own"""
+
 import pygame
 import time
 from random import randint
