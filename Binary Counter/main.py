@@ -30,7 +30,6 @@ while(not finish):
 		if(event.type==pygame.QUIT):
 			finish=True
 
-	#print(timer)
 	count+=1
 	bCount=("{0:b}".format(count))[::-1]
 	for n in range(len(bCount)):
