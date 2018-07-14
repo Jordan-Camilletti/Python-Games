@@ -21,7 +21,7 @@ xLen=int(yLen*8.86)
 xSqr=int(xLen/6)
 
 timer=time.time()
-font=pygame.font.SysFont('Arial', 10)
+font=pygame.font.SysFont('Arial', 30)
 screen=pygame.display.set_mode((xLen,yLen))
 screen.fill(white)
 
