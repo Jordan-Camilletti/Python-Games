@@ -44,7 +44,7 @@ while(not finish):
 	timeStr=timeS[0]+"."+timeS[1][:2]#This makes sure that the time is cut off to 2 decimal places
 
 	pygame.draw.rect(screen, screen.get_at((2*xSqr+1,2*ySqr+1)), [2*xSqr,2*ySqr,xSqr,ySqr])
-	screen.blit(font.render(timeStr,False,black), (int(xLen)/2 , (yLen/2)-(font.get_height()/2)))
+	screen.blit(font.render(timeStr,False,black), ((int(xLen)/2)-3-int(len(timeS[0])*10) , (yLen/2)-(font.get_height()/2)))
 
 	pygame.time.wait(50)
 	pygame.display.update()
