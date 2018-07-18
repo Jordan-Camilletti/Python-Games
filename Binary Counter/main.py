@@ -8,6 +8,7 @@ import time
 from random import randint
 
 pygame.init()
+print(pygame.font.get_fonts())
 
 #8.86pix x 1pix
 #6squares x 4squares
@@ -22,7 +23,7 @@ xSqr=int(xLen/6)
 
 timer=time.time()
 timeS=""
-font=pygame.font.SysFont('Arial', 30)
+font=pygame.font.SysFont('centurygothic', 30)
 screen=pygame.display.set_mode((xLen,yLen))
 screen.fill(white)
 
