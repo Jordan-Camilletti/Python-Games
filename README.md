@@ -15,3 +15,7 @@ CLICK! CLICK! CLICK! CLICK!
 3. Sierpinski's Carpet: A cool looking fractal sqaure pattern 
 Space pauses/unpauses
 ~~~
+~~~
+4. Binary Counter: Similar to the counter used in AGDQ/GDQ but the squares actually count properly
+Space pauses/unpauses
+~~~
