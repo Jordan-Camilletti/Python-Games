@@ -1,6 +1,6 @@
 # Python Games
 A collection of python games made using mostly pygames.
-Most will be basic games made for fun
+Most of these games will be basic games made for fun
 
 Games:
 ~~~
