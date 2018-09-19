@@ -20,5 +20,5 @@ Space pauses/unpauses
 Space pauses/unpauses
 ~~~
 ~~~
-5. 
+5. :
 ~~~
