@@ -19,5 +19,6 @@ Space pauses/unpauses
 4. Binary Counter: Similar to the counter used in AGDQ/GDQ but the squares actually count properly
 Space pauses/unpauses
 ~~~
+~~~
 5. 
 ~~~
