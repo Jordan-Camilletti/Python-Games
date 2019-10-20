@@ -18,6 +18,12 @@ screen.fill(white)
 pygame.display.set_caption("Population 1")
 
 while(not finish):
-	
+	for event in pygame.event.get():
+		#if(event.type == pygame.QUIT):
+			#finish=True
+		if(event.type == pygame.MOUSEBUTTONDOWN):
+			finish=True
+	screen.fill(white)
+	pygame.display.update()
 pygame.quit()
 quit()
