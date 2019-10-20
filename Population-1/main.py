@@ -25,5 +25,6 @@ while(not finish):
 			finish=True
 	screen.fill(white)
 	pygame.display.update()
+	
 pygame.quit()
 quit()
