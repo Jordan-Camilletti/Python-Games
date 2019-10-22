@@ -11,10 +11,11 @@ black=(0,0,0)
 red=(255,0,0)
 green=(0,255,0)
 blue=(0,0,255)
+star=(10,10,244)
 finish=False
 
 screen=pygame.display.set_mode((800,600))
-screen.fill(white)
+screen.fill(black)
 pygame.display.set_caption("Population 1")
 
 while(not finish):
