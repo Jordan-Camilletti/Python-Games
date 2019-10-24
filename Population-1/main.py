@@ -13,10 +13,15 @@ green=(0,255,0)
 blue=(0,0,255)
 star=(10,10,244)
 finish=False
+screenXLen=800
+screenYLen=600
 
-screen=pygame.display.set_mode((800,600))
+screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
 pygame.display.set_caption("Population 1")
+
+playerXPos=(screenXLen/2)-(screenXLen*0.01)
+playerYPos=(screenYLen/2)-(screenYLen*0.01)
 
 while(not finish):
 	for event in pygame.event.get():
@@ -24,7 +29,7 @@ while(not finish):
 			finish=True
 		if(event.type == pygame.MOUSEBUTTONDOWN):
 			finish=True
-	screen.fill(white)
+	pygame.draw.rect(screen,white,[playerXPos,playerYPox,(screenXLen*0.02),(screenYLen*0.02)])
 	pygame.display.update()
 	
 pygame.quit()
