@@ -27,9 +27,11 @@ while(not finish):
 	for event in pygame.event.get():
 		if(event.type == pygame.QUIT):
 			finish=True
-		if(event.type == pygame.MOUSEBUTTONDOWN):
-			finish=True
-	pygame.draw.rect(screen,white,[playerXPos,playerYPox,(screenXLen*0.02),(screenYLen*0.02)])
+		if(event.type == pygame.KEYDOWN):
+			while(event.key == pygame.K_a and playerXPos>0):
+				playerXPos-=min(2,playerXPos)
+	screen.fill(black)
+	pygame.draw.rect(screen,white,[playerXPos,playerYPos,(screenXLen*0.02),(screenXLen*0.02)])
 	pygame.display.update()
 	
 pygame.quit()
