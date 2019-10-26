@@ -31,24 +31,28 @@ while(not finish):
 		if(event.type == pygame.QUIT):
 			finish=True
 		if(event.type == pygame.KEYDOWN):
-			if(event.key == pygame.K_w and playerYPos>0):
+			if(event.key == pygame.K_w):
 				movementY+=max(-2,-1*playerYPos)
-			if(event.key == pygame.K_a and playerXPos>0):
+			if(event.key == pygame.K_a):
 				movementX+=max(-2,-1*playerXPos)
-			if(event.key == pygame.K_s and playerYPos<screenYLen*0.98):
+			if(event.key == pygame.K_s):
 				movementY+=min(2,screenYLen-playerYPos)
-			if(event.key == pygame.K_d and playerXPos<screenXLen*0.98):
+			if(event.key == pygame.K_d):
 				movementX+=min(2,screenXLen-playerXPos)
 	playerXPos+=movementX
 	if(playerXPos<0):
 		playerXPos=0
+		movementX=0
 	elif(playerXPos>=screenXLen*0.98):
 		playerXPos=screenXLen*0.98
+		movementX=0
 	playerYPos+=movementY
 	if(playerYPos<0):
 		playerYPos=0
+		movementY=0
 	elif(playerYPos>=screenYLen*0.98):
 		playerYPos=screenYLen*0.98
+		movementY=0
 	
 	screen.fill(black)
 	pygame.draw.rect(screen,white,[playerXPos,playerYPos,(screenXLen*0.02),(screenXLen*0.02)])
