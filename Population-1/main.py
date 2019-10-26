@@ -41,8 +41,7 @@ while(not finish):
 				movementX+=min(2,screenXLen-playerXPos)
 	playerXPos+=movementX
 	playerYPos+=movementY
-	movementX=0
-	movementY=0
+	
 	screen.fill(black)
 	pygame.draw.rect(screen,white,[playerXPos,playerYPos,(screenXLen*0.02),(screenXLen*0.02)])
 	pygame.display.update()
