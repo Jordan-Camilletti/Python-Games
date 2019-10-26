@@ -28,21 +28,21 @@ playerYPos=(screenYLen/2)-(screenYLen*0.01)
 
 while(not finish):
 	for event in pygame.event.get():
-		movementX=0
-		movementY=0
 		if(event.type == pygame.QUIT):
 			finish=True
 		if(event.type == pygame.KEYDOWN):
 			if(event.key == pygame.K_w and playerYPos>0):
-				movementY=max(-2,-1*playerYPos)
+				movementY+=max(-2,-1*playerYPos)
 			if(event.key == pygame.K_a and playerXPos>0):
-				movementX=max(-2,-1*playerXPos)
+				movementX+=max(-2,-1*playerXPos)
 			if(event.key == pygame.K_s and playerYPos<screenYLen*0.98):
-				movementY=min(2,screenYLen-playerYPos)
+				movementY+=min(2,screenYLen-playerYPos)
 			if(event.key == pygame.K_d and playerXPos<screenXLen*0.98):
-				movementX=min(2,screenXLen-playerXPos)
+				movementX+=min(2,screenXLen-playerXPos)
 	playerXPos+=movementX
 	playerYPos+=movementY
+	movementX=0
+	movementY=0
 	screen.fill(black)
 	pygame.draw.rect(screen,white,[playerXPos,playerYPos,(screenXLen*0.02),(screenXLen*0.02)])
 	pygame.display.update()
