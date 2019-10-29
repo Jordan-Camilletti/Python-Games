@@ -42,17 +42,17 @@ while(not finish):
 	playerXPos+=movementX
 	if(playerXPos<0):
 		playerXPos=0
-		movementX=0
+		movementX*=-1
 	elif(playerXPos>=screenXLen*0.98):
 		playerXPos=screenXLen*0.98
-		movementX=0
+		movementX*=-1
 	playerYPos+=movementY
 	if(playerYPos<0):
 		playerYPos=0
-		movementY=0
+		movementY*=-1
 	elif(playerYPos>=screenYLen*0.98):
 		playerYPos=screenYLen*0.98
-		movementY=0
+		movementY*=-1
 	
 	screen.fill(black)
 	pygame.draw.rect(screen,white,[playerXPos,playerYPos,(screenXLen*0.02),(screenXLen*0.02)])
