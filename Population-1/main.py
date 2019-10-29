@@ -15,6 +15,7 @@ red=(255,0,0)
 green=(0,255,0)
 blue=(0,0,255)
 star=(10,10,244)
+font=pygame.font.SysFont('Impact', 40)
 
 finish=False
 
@@ -84,6 +85,8 @@ while(not finish):
 			movementY*=-1
 	
 		screen.fill(black)
+		screen.blit(font.render(str(score[0]),False,white), (300, 10))
+		screen.blit(font.render(str(score[1]),False,white), (500, 10))
 		pygame.draw.rect(screen,white,[screenXLen*0.1,paddle1,20,paddleLength])
 		pygame.draw.rect(screen,white,[screenXLen-(screenXLen*0.125),paddle2,20,paddleLength])
 		pygame.draw.rect(screen,white,[ballXPos,ballYPos,(screenXLen*0.02),(screenXLen*0.02)])
