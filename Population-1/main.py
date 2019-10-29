@@ -28,10 +28,12 @@ screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
 pygame.display.set_caption("Population 1")
 
-def AIMove(ballY, paddleY, speed):
+def AIMove(ballY, paddleY, paddleLen, screenY, speed):
 	if(paddleY>ballY):
 		return(paddleY-speed)
-	return(paddleY+speed)
+	if(paddleY+paddleLen<screenY):
+		return(paddleY+speed)
+	return(paddleY)
 
 while(not finish):
 	print(score)
@@ -39,7 +41,7 @@ while(not finish):
 	paddle1=(screenYLen/2)-(paddleLength/2)
 	paddle2=(screenYLen/2)-(paddleLength/2)
 	movementX=ballSpeed-(2*ballSpeed*random.randint(0,1))
-	movementY=ballSpeed-(2*ballSpeed*random.randint(0,1))
+	movementY=0.02*ballSpeed*random.randint(0,100)
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
 	while(match):
@@ -50,24 +52,27 @@ while(not finish):
 		
 		if(keys[pygame.K_w] and paddle1>0):
 			paddle1-=paddleSpeed
-		if(keys[pygame.K_s]):
+		if(keys[pygame.K_s] and paddle1+paddleLength<screenYLen):
 			paddle1+=paddleSpeed
+		paddle2=AIMove(ballYPos,paddle2,paddleLength,screenYLen,paddleSpeed)
 
 		if(abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
-			movementX=ballSpeed
+			movementX=(-1*movementX)+1
+			movementY=0.02*ballSpeed*random.randint(-100,100)
 		if(abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
-			movementX=-ballSpeed
+			movementX=(-1*movementX)-1
+			movementY=0.02*ballSpeed*random.randint(-100,100)
 		ballXPos+=movementX
 		ballYPos+=movementY
 		if(ballXPos<0):
 			ballXPos=0
 			movementX=0
-			score[0]+=1
+			score[1]+=1
 			match=False
 		elif(ballXPos>=screenXLen*0.98):
 			ballXPos=screenXLen*0.98
 			movementX=0
-			score[1]+=1
+			score[0]+=1
 			match=False
 		if(ballYPos<0):
 			ballYPos=0
