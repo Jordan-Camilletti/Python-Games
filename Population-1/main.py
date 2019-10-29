@@ -21,17 +21,20 @@ finish=False
 screenXLen=800
 screenYLen=600
 paddleLength=(screenYLen*0.20)
+paddleSpeed=6
+ballSpeed=5
 score=[0,0]
 screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
 pygame.display.set_caption("Population 1")
 
 while(not finish):
+	print(score)
 	match=True
 	paddle1=(screenYLen/2)-(paddleLength/2)
 	paddle2=(screenYLen/2)-(paddleLength/2)
-	movementX=6-(12*random.randint(0,1))
-	movementY=6-(12*random.randint(0,1))
+	movementX=ballSpeed-(2*ballSpeed*random.randint(0,1))
+	movementY=ballSpeed-(2*ballSpeed*random.randint(0,1))
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
 	while(match):
@@ -41,10 +44,12 @@ while(not finish):
 		keys=pygame.key.get_pressed()
 		
 		if(keys[pygame.K_w] and paddle1>0):
-			paddle1-=6
+			paddle1-=paddleSpeed
 		if(keys[pygame.K_s]):
-			paddle1+=6
-			
+			paddle1+=paddleSpeed
+
+		if(abs(ballXPos-100)<20 and ballYPos+paddleLength>=paddle1):
+			movementX*=-1
 		ballXPos+=movementX
 		ballYPos+=movementY
 		if(ballXPos<0):
