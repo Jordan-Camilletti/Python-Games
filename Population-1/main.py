@@ -15,6 +15,7 @@ green=(0,255,0)
 blue=(0,0,255)
 star=(10,10,244)
 finish=False
+match=True
 
 screenXLen=800
 screenYLen=600
@@ -33,14 +34,17 @@ while(not finish):
 		if(event.type == pygame.QUIT):
 			finish=True
 	playerXPos+=movementX
+	playerYPos+=movementY
 	if(playerXPos<0):
 		playerXPos=0
 		movementX=0
 		score[0]+=1
+		match=False
 	elif(playerXPos>=screenXLen*0.98):
 		playerXPos=screenXLen*0.98
 		movementX=0
 		score[1]+=1
+		match=False
 	playerYPos+=movementY
 	if(playerYPos<0):
 		playerYPos=0
