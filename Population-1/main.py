@@ -28,6 +28,11 @@ screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
 pygame.display.set_caption("Population 1")
 
+def AIMove(ballY, paddleY, speed):
+	if(paddleY>ballY):
+		return(paddleY-speed)
+	return(paddleY+speed)
+
 while(not finish):
 	print(score)
 	match=True
@@ -48,8 +53,10 @@ while(not finish):
 		if(keys[pygame.K_s]):
 			paddle1+=paddleSpeed
 
-		if(abs(ballXPos-100)<20 and ballYPos+paddleLength>=paddle1):
-			movementX*=-1
+		if(abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
+			movementX=ballSpeed
+		if(abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
+			movementX=-ballSpeed
 		ballXPos+=movementX
 		ballYPos+=movementY
 		if(ballXPos<0):
@@ -70,7 +77,8 @@ while(not finish):
 			movementY*=-1
 	
 		screen.fill(black)
-		pygame.draw.rect(screen,white,[100,paddle1,20,paddleLength])
+		pygame.draw.rect(screen,white,[screenXLen*0.1,paddle1,20,paddleLength])
+		pygame.draw.rect(screen,white,[screenXLen-(screenXLen*0.125),paddle2,20,paddleLength])
 		pygame.draw.rect(screen,white,[ballXPos,ballYPos,(screenXLen*0.02),(screenXLen*0.02)])
 		pygame.display.update()
 		
