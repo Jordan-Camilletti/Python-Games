@@ -59,10 +59,10 @@ while(not finish):
 			paddle1+=paddleSpeed
 		paddle2=AIMove(ballYPos,paddle2,paddleLength,screenYLen,paddleSpeed+1)
 
-		if(abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
+		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1
 			movementY=0.2*(ballYPos-paddle1-(paddleLength/2))
-		if(abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
+		if(movementX>0 and abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
 			movementX=(-1*movementX)-1
 			movementY=0.2*(ballYPos-paddle2-(paddleLength/2))
 		ballXPos+=movementX
