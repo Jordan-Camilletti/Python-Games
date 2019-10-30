@@ -15,6 +15,7 @@ red=(255,0,0)
 green=(0,255,0)
 blue=(0,0,255)
 star=(10,10,244)
+font=pygame.font.SysFont('Impact', 40)
 
 finish=False
 
@@ -58,10 +59,10 @@ while(not finish):
 			paddle1+=paddleSpeed
 		paddle2=AIMove(ballYPos,paddle2,paddleLength,screenYLen,paddleSpeed+1)
 
-		if(abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
+		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1
 			movementY=0.2*(ballYPos-paddle1-(paddleLength/2))
-		if(abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
+		if(movementX>0 and abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
 			movementX=(-1*movementX)-1
 			movementY=0.2*(ballYPos-paddle2-(paddleLength/2))
 		ballXPos+=movementX
@@ -84,6 +85,8 @@ while(not finish):
 			movementY*=-1
 	
 		screen.fill(black)
+		screen.blit(font.render(str(score[0]),False,white), (300, 10))
+		screen.blit(font.render(str(score[1]),False,white), (500, 10))
 		pygame.draw.rect(screen,white,[screenXLen*0.1,paddle1,20,paddleLength])
 		pygame.draw.rect(screen,white,[screenXLen-(screenXLen*0.125),paddle2,20,paddleLength])
 		pygame.draw.rect(screen,white,[ballXPos,ballYPos,(screenXLen*0.02),(screenXLen*0.02)])
