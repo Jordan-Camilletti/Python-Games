@@ -52,6 +52,9 @@ def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 	return(paddleY)#Paddle doesn't need to move/can't move
 
 while(not finish):
+	for event in pygame.event.get():
+			if(event.type == pygame.QUIT):
+				finish=True
 	match=True#Match is used for each game to reset it
 	paddle1=(screenYLen/2)-(paddleLength/2)#Paddle starting positions
 	paddle2=(screenYLen/2)-(paddleLength/2)
@@ -64,7 +67,9 @@ while(not finish):
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
 	while(match):
+		print("X")
 		for event in pygame.event.get():
+			print("Y")
 			if(event.type == pygame.QUIT):
 				finish=True
 		keys=pygame.key.get_pressed()
@@ -77,17 +82,17 @@ while(not finish):
 		
 		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1#Ball hitting left paddle
-			movementY=0.15*(ballYPos-paddle1-(paddleLength/2))
+			movementY=0.2*(ballYPos-paddle1-(paddleLength/2))
 		if(movementX>0 and abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
 			movementX=(-1*movementX)-1#Ball hitting right paddle
-			movementY=0.15*(ballYPos-paddle2-(paddleLength/2))
+			movementY=0.2*(ballYPos-paddle2-(paddleLength/2))
 		ballXPos+=movementX
 		ballYPos+=movementY
 		
 		if(ballXPos<0):#Ball hitting left goal
 			score[1]+=1
 			match=False
-		elif(ballXPos>=screenXLen):#Ball hitting right goal\
+		elif(ballXPos>=screenXLen):#Ball hitting right goal
 			score[0]+=1
 			match=False
 		if(ballYPos<0):#Hitting the top and bottom of the screen
