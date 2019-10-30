@@ -24,6 +24,7 @@ screenYLen=600
 paddleLength=(screenYLen*0.20)
 paddleSpeed=screenYLen*0.01
 ballSpeed=paddleSpeed-1
+movementX=ballSpeed
 score=[0,0]
 screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
@@ -54,7 +55,11 @@ while(not finish):
 	match=True#Match is used for each game to reset it
 	paddle1=(screenYLen/2)-(paddleLength/2)#Paddle starting positions
 	paddle2=(screenYLen/2)-(paddleLength/2)
-	movementX=ballSpeed-(2*ballSpeed*random.randint(0,1))#Starting ball speeds
+	if(movementX>0):
+		movementX=ballSpeed
+	else:
+		movementX=-1*ballSpeed
+	#movementX=ballSpeed-(2*ballSpeed*random.randint(0,1))#Starting ball speeds
 	movementY=0
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
@@ -72,21 +77,17 @@ while(not finish):
 		
 		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1#Ball hitting left paddle
-			movementY=0.2*(ballYPos-paddle1-(paddleLength/2))
+			movementY=0.15*(ballYPos-paddle1-(paddleLength/2))
 		if(movementX>0 and abs(ballXPos-(screenXLen-(screenXLen*0.125)))<20 and ballYPos-paddle2<paddleLength and ballYPos-paddle2>=0):
 			movementX=(-1*movementX)-1#Ball hitting right paddle
-			movementY=0.2*(ballYPos-paddle2-(paddleLength/2))
+			movementY=0.15*(ballYPos-paddle2-(paddleLength/2))
 		ballXPos+=movementX
 		ballYPos+=movementY
 		
 		if(ballXPos<0):#Ball hitting left goal
-			ballXPos=0
-			movementX=0
 			score[1]+=1
 			match=False
-		elif(ballXPos>=screenXLen*0.98):#Ball hitting right goal
-			ballXPos=screenXLen*0.98
-			movementX=0
+		elif(ballXPos>=screenXLen):#Ball hitting right goal\
 			score[0]+=1
 			match=False
 		if(ballYPos<0):#Hitting the top and bottom of the screen
