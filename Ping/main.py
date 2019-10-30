@@ -27,15 +27,15 @@ ballSpeed=5
 score=[0,0]
 screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
-pygame.display.set_caption("Population 1")
+pygame.display.set_caption("Ping")
 
-def AIMove(ballY, paddleY, paddleLen, screenY, speed):
+def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 	if(paddleY<ballY and abs(paddleY-ballY)<paddleLen/2):
 		return(paddleY)
 	if(paddleY>ballY):
-		return(paddleY-speed)
+		return(paddleY-paddleSpeed)
 	if(paddleY+paddleLen<screenY):
-		return(paddleY+speed)
+		return(paddleY+paddleSpeed)
 	return(paddleY)
 
 while(not finish):
@@ -57,8 +57,8 @@ while(not finish):
 			paddle1-=paddleSpeed
 		if(keys[pygame.K_s] and paddle1+paddleLength<screenYLen):
 			paddle1+=paddleSpeed
-		paddle2=AIMove(ballYPos,paddle2,paddleLength,screenYLen,paddleSpeed+1)
-
+		paddle2=AIMove(ballYPos,ballSpeed,paddle2,paddleSpeed,paddleLength,screenYLen)
+		
 		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1
 			movementY=0.2*(ballYPos-paddle1-(paddleLength/2))
