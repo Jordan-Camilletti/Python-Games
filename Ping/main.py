@@ -30,15 +30,23 @@ screen.fill(black)
 pygame.display.set_caption("Ping")
 
 def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
+	if(paddleY<0):
+		return(0)
+	if(paddleY+paddleLen>screenY):
+		return(screenY-paddleLen)
 	center=paddleY+(paddleLen/2)#Center of paddle
-	if(center!=ballY and paddleY>=0 and paddleY+paddleLen<=screenY):
-		if(center>ballY):#Paddle needs to move up
-			if(paddleY-paddleSpeed<=0):
+	if(center!=ballY):
+		if(center>=ballY):#Paddle needs to move up
+			if(paddleY-paddleSpeed<0):
 				return(0)
+			if(center-paddleSpeed<ballY):
+				return(ballY-(paddleLen/2))
 			return(paddleY-paddleSpeed)
 		else:#Paddle needs to move downs
 			if(paddleY+paddleLen+paddleSpeed>screenY):
 				return(screenY-paddleLen)
+			if(center+paddleSpeed>ballY):
+				return(ballY-(paddleLen/2))
 			return(paddleY+paddleSpeed)
 	return(paddleY)#Paddle doesn't need to move/can't move
 
