@@ -66,10 +66,8 @@ while(not finish):
 	movementY=0
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
-	while(match):
-		print("X")
+	while(match and not finish):
 		for event in pygame.event.get():
-			print("Y")
 			if(event.type == pygame.QUIT):
 				finish=True
 		keys=pygame.key.get_pressed()
