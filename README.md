@@ -20,6 +20,6 @@ Space pauses/unpauses
 Space pauses/unpauses
 ~~~
 ~~~
-5. Ping
+5. Ping: A totally normal game of Pong, I swear
 
 ~~~
