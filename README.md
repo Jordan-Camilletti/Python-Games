@@ -21,6 +21,6 @@ Space pauses/unpauses
 ~~~
 ~~~
 5. Ping: A totally normal game of Pong, I swear
-w/s or arrows to move
-It's Pong, what do you thing?
+W/S or arrows to move
+It's Pong, what did you expect?
 ~~~
