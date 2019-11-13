@@ -62,8 +62,7 @@ while(not finish):
 		movementX=ballSpeed
 	else:
 		movementX=-1*ballSpeed
-	#movementX=ballSpeed-(2*ballSpeed*random.randint(0,1))#Starting ball speeds
-	movementY=0
+	movementY=ballSpeed*random.randint(-50,50)*0.01#Starting ball speeds
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
 	while(match and not finish):
