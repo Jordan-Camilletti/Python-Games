@@ -18,7 +18,7 @@ star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
 
 finish=False
-currMatch=1
+currMatch=3
 
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
