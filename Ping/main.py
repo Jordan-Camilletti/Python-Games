@@ -18,7 +18,7 @@ star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
 
 finish=False
-currMatch=3
+currMatch=0
 
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
@@ -57,7 +57,6 @@ while(not finish):
 			if(event.type == pygame.QUIT):
 				finish=True
 	match=True#Match is used for each game to reset it
-	currMatch+=1
 	paddle1=(screenYLen/2)-(paddleLength/2)#Paddle starting positions
 	paddle2=(screenYLen/2)-(paddleLength/2)
 	if(movementX>0):
@@ -67,12 +66,12 @@ while(not finish):
 	movementY=ballSpeed*random.randint(-50,50)*0.01#Starting ball speeds
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
-	if((currMatch-1)%3==0):
-		if(score[0]<=score[1]):
-			currMatch-=3
+	if(score[0]>=2 or score[1]>=2):
+		if(score[0]>score[1]):
+			currMatch+=1
 		score[0]=0
 		score[1]=0
-		print((currMatch-1)/3)
+		print(currMatch)
 	while(match and not finish):
 		for event in pygame.event.get():
 			if(event.type == pygame.QUIT):
