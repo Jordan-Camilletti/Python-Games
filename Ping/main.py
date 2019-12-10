@@ -66,7 +66,7 @@ while(not finish):
 	movementY=ballSpeed*random.randint(-50,50)*0.01#Starting ball speeds
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
-	if(score[0]>=2 or score[1]>=2):
+	if(score[0]+score[1]>=3 and abs(score[0]-score[1])>=2):#Player must win/lose by at least 2 points
 		if(score[0]>score[1]):
 			currMatch+=1
 		score[0]=0
