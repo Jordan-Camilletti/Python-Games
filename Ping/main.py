@@ -19,7 +19,7 @@ star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
 
 finish=False
-currMatch=1
+currMatch=0
 
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
@@ -69,16 +69,12 @@ while(not finish):
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
 	if(score[0]+score[1]>=3 and abs(score[0]-score[1])>=2):#Player must win/lose by at least 2 points
-		if(score[0]>score[1]):
-			currMatch+=1
+		if(score[1]>score[0]):
+			currMatch=0
+		currMatch+=1
 			
-			#TODO: Have data 'load-in' for each new match started
-			print(currMatch)
-		
-		else:
-		
-			#TODO: Have game 'reset' back to first level
-			print(currMatch)
+		#TODO: Have data 'load-in' for each new match started
+		print(currMatch)
 		
 		score[0]=0
 		score[1]=0
