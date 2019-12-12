@@ -3,6 +3,7 @@
 """
 """
 
+#TODO: Create 'data list' for game to read off of
 import pygame
 import random
 
@@ -70,9 +71,17 @@ while(not finish):
 	if(score[0]+score[1]>=3 and abs(score[0]-score[1])>=2):#Player must win/lose by at least 2 points
 		if(score[0]>score[1]):
 			currMatch+=1
+			
+			#TODO: Have data 'load-in' for each new match started
+			print(currMatch)
+		
+		else:
+		
+			#TODO: Have game 'reset' back to first level
+			print(currMatch)
+		
 		score[0]=0
 		score[1]=0
-		print(currMatch)
 	while(match and not finish):
 		for event in pygame.event.get():
 			if(event.type == pygame.QUIT):
