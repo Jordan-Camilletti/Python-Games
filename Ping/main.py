@@ -19,7 +19,7 @@ star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
 
 finish=False
-currMatch=0
+currMatch=1
 
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
@@ -72,12 +72,13 @@ while(not finish):
 		if(score[1]>score[0]):
 			currMatch=0
 		currMatch+=1
+		score[0]=0
+		score[1]=0
 			
 		#TODO: Have data 'load-in' for each new match started
 		print(currMatch)
-		
-		score[0]=0
-		score[1]=0
+	
+	
 	while(match and not finish):
 		for event in pygame.event.get():
 			if(event.type == pygame.QUIT):
