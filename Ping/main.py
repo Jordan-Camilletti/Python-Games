@@ -18,12 +18,13 @@ star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
 
 finish=False
-currMatch=0
+currMatch=1
 
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
 paddleLength=(screenYLen*0.20)
 paddleSpeed=screenYLen*0.01
+enemySpeed=screenYLen*0.01
 ballSpeed=paddleSpeed-1
 movementX=ballSpeed
 score=[0,0]
@@ -78,11 +79,11 @@ while(not finish):
 				finish=True
 		keys=pygame.key.get_pressed()
 		
-		if(keys[pygame.K_w] and paddle1>0):#Moving up and down
+		if((keys[pygame.K_w] or keys[pygame.K_UP]) and paddle1>0):#Moving up and down
 			paddle1-=paddleSpeed
-		if(keys[pygame.K_s] and paddle1+paddleLength<screenYLen):
+		if((keys[pygame.K_s] or keys[pygame.K_DOWN]) and paddle1+paddleLength<screenYLen):
 			paddle1+=paddleSpeed
-		paddle2=AIMove(ballYPos,ballSpeed,paddle2,paddleSpeed,paddleLength,screenYLen)
+		paddle2=AIMove(ballYPos,ballSpeed,paddle2,enemySpeed,paddleLength,screenYLen)
 		
 		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1#Ball hitting left paddle
