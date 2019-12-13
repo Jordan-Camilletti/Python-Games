@@ -24,6 +24,3 @@ Space pauses/unpauses
 W/S or arrows to move
 It's Pong, what did you expect?
 ~~~
-~~~
-6. TBA:
-~~~
