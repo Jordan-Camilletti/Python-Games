@@ -55,6 +55,9 @@ def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 			return(paddleY+paddleSpeed)
 	return(paddleY)#Paddle doesn't need to move/can't move
 
+def loadNewGame(file,curr):
+	return(0)
+	
 while(not finish):
 	for event in pygame.event.get():
 			if(event.type == pygame.QUIT):
@@ -78,6 +81,7 @@ while(not finish):
 			
 		#TODO: Have data 'load-in' for each new match started
 		print(currMatch)
+		values=loadNewGame(file,currMatch)
 	
 	while(match and not finish):
 		for event in pygame.event.get():
