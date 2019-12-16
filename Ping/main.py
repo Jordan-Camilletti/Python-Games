@@ -17,6 +17,7 @@ green=(0,255,0)
 blue=(0,0,255)
 star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
+file=open("data.txt", "r")
 
 finish=False
 currMatch=1
@@ -77,7 +78,6 @@ while(not finish):
 			
 		#TODO: Have data 'load-in' for each new match started
 		print(currMatch)
-	
 	
 	while(match and not finish):
 		for event in pygame.event.get():
