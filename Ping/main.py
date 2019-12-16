@@ -57,7 +57,7 @@ def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 
 def loadNewGame(file,curr):
 	return(0)
-	
+
 while(not finish):
 	for event in pygame.event.get():
 			if(event.type == pygame.QUIT):
