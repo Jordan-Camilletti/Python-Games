@@ -22,13 +22,14 @@ file=open("data.txt", "r")
 finish=False
 currMatch=1
 
+masterValues=[800,600,0.2,0.1,0.1,-1,1]
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
 paddleLength=(screenYLen*0.20)
 paddleSpeed=screenYLen*0.01
 enemySpeed=screenYLen*0.01
 ballSpeed=paddleSpeed-1
-movementX=ballSpeed
+movementX=ballSpeed*1
 score=[0,0]
 screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
@@ -56,6 +57,9 @@ def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 	return(paddleY)#Paddle doesn't need to move/can't move
 
 def loadNewGame(file,curr):
+	print("A")
+	paddleSpeed=600
+	print("B")
 	return(0)
 
 while(not finish):
@@ -81,7 +85,7 @@ while(not finish):
 			
 		#TODO: Have data 'load-in' for each new match started
 		print(currMatch)
-		values=loadNewGame(file,currMatch)
+		loadNewGame(file,currMatch)
 	
 	while(match and not finish):
 		for event in pygame.event.get():
