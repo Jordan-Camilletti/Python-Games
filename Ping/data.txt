@@ -1,5 +1,11 @@
 #TODO: Create 'data list' for game to read off of
-#screenXLen, screenYLen, paddleLength, paddleSpeed, enemySpeed, ballSpeed, movementX
-#value, value, screenYLen*value, screenYLen*value, screenYLen*value, paddleSpeed-value, ballSpeed*1
+
+screenXLen, value
+screenYLen, value
+paddleLength, screenYLen*value
+paddleSpeed, screenYLen*value
+enemySpeed, screenYLen*value
+ballSpeed, paddleSpeed-value
+movementX, ballSpeed*1
 
 [800,600,0.2,0.1,0.1,-1,1]
