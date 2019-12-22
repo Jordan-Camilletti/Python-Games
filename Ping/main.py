@@ -3,7 +3,6 @@
 """
 """
 
-#TODO: Create 'data list' for game to read off of
 import pygame
 import random
 
@@ -56,7 +55,7 @@ def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 			return(paddleY+paddleSpeed)
 	return(paddleY)#Paddle doesn't need to move/can't move
 
-def loadNewGame(file,curr):
+def loadNewGame(file,curr):#TODO: Create 'data list' for game to read off of
 	print("A")
 	paddleSpeed=600
 	print("B")
