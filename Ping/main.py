@@ -86,9 +86,16 @@ while(not finish):
 			
 		data=[]
 		for n in range(8):
-			data.add(dataFile.readline().split(","))
+			data.append(float(dataFile.readline().split(",")[currMatch]))
 		print(data)
-		print(currMatch)
+		screenXLen=data[0]
+		screenYLen=data[1]
+		paddleLength=data[2]
+		paddleSpeed=data[3]
+		enemySpeed=data[4]
+		ballSpeed=data[5]
+		movementX=data[6]
+		ballSize=data[7]
 	
 	while(match and not finish):
 		for event in pygame.event.get():
@@ -100,7 +107,7 @@ while(not finish):
 			paddle1-=paddleSpeed
 		if((keys[pygame.K_s] or keys[pygame.K_DOWN]) and paddle1+paddleLength<screenYLen):
 			paddle1+=paddleSpeed
-		paddle2=AIMove(ballYPos,ballSpeed,paddle2,enemySpeed,paddleLength,screenYLen)
+		#paddle2=AIMove(ballYPos,ballSpeed,paddle2,enemySpeed,paddleLength,screenYLen)
 		
 		if(movementX<0 and abs(ballXPos-(screenXLen*0.1))<20 and ballYPos-paddle1<paddleLength and ballYPos-paddle1>=0):
 			movementX=(-1*movementX)+1#Ball hitting left paddle

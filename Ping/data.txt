@@ -1,17 +1,8 @@
-[800]
-[600]
-[0.2]
-[0.1]
-[0.1]
-[-1]
-[1]
-[1]
-
-screenXLen, value
-screenYLen, value
-paddleLength, screenYLen*value
-paddleSpeed, screenYLen*value
-enemySpeed, screenYLen*value
-ballSpeed, paddleSpeed-value
-movementX, ballSpeed*value
-ballSize, ballSize*value
+800,800,0 screenXLen, value
+600,600,0 screenYLen, value
+0.2,0.2,0 paddleLength, screenYLen*value
+0.1,0.8,0 paddleSpeed, screenYLen*value
+0.1,0.8,0 enemySpeed, screenYLen*value
+1,0,0 ballSpeed, paddleSpeed-value
+1,1,0 movementX, ballSpeed*value
+1,1,0 ballSize, ballSize*value
