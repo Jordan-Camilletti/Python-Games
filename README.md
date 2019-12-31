@@ -20,7 +20,8 @@ Space pauses/unpauses
 Space pauses/unpauses
 ~~~
 ~~~
-5. Ping: A totally normal game of Pong, I swear
+5. Ping: A totally normal game of Pong
 W/S or arrows to move
 It's Pong, what did you expect?
+Bit of a failed project but I guess I'll keep it here
 ~~~
