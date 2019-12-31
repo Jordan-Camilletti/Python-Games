@@ -19,9 +19,8 @@ font=pygame.font.SysFont('Impact', 40)
 file=open("data.txt", "r")
 
 finish=False
-currMatch=1
+currMatch=0
 
-masterValues=[800,600,0.2,0.1,0.1,-1,1]
 screenXLen=800#All paddle/ball speeds/sizes are based off of these two
 screenYLen=600
 paddleLength=(screenYLen*0.20)
@@ -30,6 +29,9 @@ enemySpeed=screenYLen*0.01
 ballSpeed=paddleSpeed-1
 movementX=ballSpeed*1
 score=[0,0]
+dataFile=open("data.txt","r")
+data=[]
+
 screen=pygame.display.set_mode((screenXLen,screenYLen))
 screen.fill(black)
 pygame.display.set_caption("Ping")
@@ -55,10 +57,10 @@ def AIMove(ballY, ballSpeed, paddleY, paddleSpeed, paddleLen, screenY):
 			return(paddleY+paddleSpeed)
 	return(paddleY)#Paddle doesn't need to move/can't move
 
-def loadNewGame(file,curr):#TODO: Create 'data list' for game to read off of
+def loadNewGame(paddleSpeed,file,curr):#TODO: Create 'data list' for game to read off of
 	print("A")
 	paddleSpeed=600
-	print("B")
+	print(paddleSpeed)
 	return(0)
 
 while(not finish):
@@ -76,15 +78,17 @@ while(not finish):
 	ballXPos=(screenXLen/2)-(screenXLen*0.01)#Starting ball positions
 	ballYPos=(screenYLen/2)-(screenYLen*0.01)
 	if(score[0]+score[1]>=3 and abs(score[0]-score[1])>=2):#Player must win/lose by at least 2 points
+		currMatch+=1
 		if(score[1]>score[0]):
 			currMatch=0
-		currMatch+=1
 		score[0]=0
 		score[1]=0
 			
-		#TODO: Have data 'load-in' for each new match started
+		data=[]
+		for n in range(8):
+			data.add(dataFile.readline().split(","))
+		print(data)
 		print(currMatch)
-		loadNewGame(file,currMatch)
 	
 	while(match and not finish):
 		for event in pygame.event.get():
@@ -130,5 +134,6 @@ while(not finish):
 		
 		clock.tick(45)
 	
+dataFile.close()
 pygame.quit()
 quit()
