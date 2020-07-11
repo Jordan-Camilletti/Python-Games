@@ -56,10 +56,10 @@ screen=pygame.display.set_mode((400,300))
 screen.fill(white)
 pygame.display.set_caption("EXTREME GARDENING!")
 
-descriptions=open('Texts/Descriptions.txt','r').readlines()#Loading the info from Texts
-names=open('Texts/Names.txt','r').readlines()
-photos=open('Texts/Photos.txt','r').readlines()
-shops=open('Texts/Shops.txt','r').readlines()
+descriptions=open('Assets/Texts/Descriptions.txt','r').readlines()#Loading the info from Texts
+names=open('Assets/Texts/Names.txt','r').readlines()
+photos=open('Assets/Texts/Photos.txt','r').readlines()
+shops=open('Assets/Texts/Shops.txt','r').readlines()
 
 while(not finish):
 	for event in pygame.event.get():
@@ -179,7 +179,7 @@ while(not finish):
 		img=pygame.image.load(photos[flowerNum+9][:-1])
 		currImg=pygame.transform.scale(img, (findSize(img.get_width(),tes), findSize(img.get_height(),tes)))
 		screen.blit(currImg, (200-(currImg.get_width()/2),300-currImg.get_height()))	
-		screen.blit(pygame.image.load('Plants/dirt.png'), (0,260))
+		screen.blit(pygame.image.load('Assets/Plants/dirt.png'), (0,260))
 		
 
 	elif(stage==3):#Shop 
