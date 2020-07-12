@@ -8,7 +8,7 @@ import math
 def findSize(t):
 	return(math.floor(size/(3**t)))
 	
-size=int(input("Enter the size of the screen.\n"))
+size=int(input("Enter the width of the screen.\n"))
 pygame.init()
 white=(255,255,255)
 black=(0,0,0)

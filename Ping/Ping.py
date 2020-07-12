@@ -16,7 +16,7 @@ green=(0,255,0)
 blue=(0,0,255)
 star=(10,10,244)
 font=pygame.font.SysFont('Impact', 40)
-file=open("data.txt", "r")
+file=open("Assets/data.txt", "r")
 
 finish=False
 currMatch=0
@@ -29,7 +29,7 @@ enemySpeed=screenYLen*0.01
 ballSpeed=paddleSpeed-1
 movementX=ballSpeed*1
 score=[0,0]
-dataFile=open("data.txt","r")
+dataFile=open("Assets/data.txt","r")
 data=[]
 
 screen=pygame.display.set_mode((screenXLen,screenYLen))
